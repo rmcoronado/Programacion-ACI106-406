@@ -19,7 +19,7 @@ Centralizar el código fuente, guías de estilo, laboratorios (Build Studios) y 
 
 **"El aula no es un aula, es una Tech Company. Tú no eres un alumno, eres un Developer."**
 
-Este repositorio contiene la bitácora oficial, material de clases, códigos de ejemplo y tickets de trabajo para el semestre de Otoño 2026.
+Este repositorio contiene la bitácora oficial, material de clases, códigos de ejemplo y tickets de trabajo para el semestre de I de 2026.
 
 ## 📚 Stack Tecnológico y Bibliografía
 * **Lenguaje:** Python 3.12+ [[Python.org]](https://www.python.org/)
