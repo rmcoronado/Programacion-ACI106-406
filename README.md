@@ -2,6 +2,21 @@
 Repositorio oficial del curso ACI106 (UDLA 2026). Una simulación de entorno laboral donde evolucionas de 'Intern' a 'Software Architect' dominando Python, Git y POO.
 # 🐍 ACI106: Python Developer Simulation (2026-10)
 
+### 🚀 Simulation Status: [ACTIVE - SPRINT 1]
+
+Bienvenido al repositorio central de **ACI106: Programación**.
+
+Este no es un curso tradicional; es una **Simulación de Desarrollo de Software**. Aquí no encontrarás "tareas escolares", sino **Tickets de Trabajo**, **Code Reviews** y **Sprints**.
+
+**Objetivo del Repositorio:**
+Centralizar el código fuente, guías de estilo, laboratorios (Build Studios) y la documentación técnica necesaria para que tu equipo (tus compañeros y tú) escale desde niveles *Junior* (Fundamentos) hasta *Senior Architect* (POO Avanzada y APIs) durante el semestre 2026-10.
+
+**Stack Tecnológico:**
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat&logo=python&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Control_de_Versiones-F05032?style=flat&logo=git&logoColor=white)
+![VS Code](https://img.shields.io/badge/IDE-VS_Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)
+
+
 **"El aula no es un aula, es una Tech Company. Tú no eres un alumno, eres un Developer."**
 
 Este repositorio contiene la bitácora oficial, material de clases, códigos de ejemplo y tickets de trabajo para el semestre de Otoño 2026.
