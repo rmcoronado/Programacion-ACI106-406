@@ -1,89 +1,99 @@
-# 🛡️ Introducción a Git y GitHub  
-## Control de Versiones para Estudiantes de Ingeniería
+# 🛡️ MÓDULO 1 — Fundamentos de Git y GitHub  
+### Introducción al Control de Versiones  
+**Carrera:** Ingeniería / Programación  
+**Nivel:** Primer Año  
 
 ---
 
-# 1️⃣ El Problema Antes de Git
+# 📌 Índice
 
-Imagina este escenario:
+1. [¿Por qué necesitamos Git?](#-por-qué-necesitamos-git)
+2. [¿Qué es Git?](#-qué-es-git)
+3. [¿Qué es GitHub?](#-qué-es-github)
+4. [Conceptos Fundamentales](#-conceptos-fundamentales)
+5. [Flujo de Trabajo en Git](#-flujo-de-trabajo-en-git)
+6. [Comandos Esenciales](#-comandos-esenciales)
+7. [Ejemplo Práctico Paso a Paso](#-ejemplo-práctico-paso-a-paso)
+8. [Buenas Prácticas](#-buenas-prácticas)
+9. [Errores Comunes](#-errores-comunes)
+10. [Conclusión](#-conclusión)
 
-- Tienes un archivo llamado `proyecto.py`
-- Haces cambios
-- Algo se rompe
-- Guardaste encima del archivo original
-- No sabes qué cambiaste
-- No puedes volver atrás 😰
+---
 
-Entonces comienzas a crear archivos como:
+# 🚨 ¿Por qué necesitamos Git?
+
+Antes de Git, los proyectos se veían así:
 
 - proyecto_final.py  
-- proyecto_final_ahora_si.py  
-- proyecto_final_definitivo_v2.py  
+- proyecto_final_v2.py  
+- proyecto_final_definitivo.py  
+- proyecto_final_definitivo_ahora_si.py  
 
-Esto es desorden.  
-Esto no escala.  
-Esto no es profesional.
+Problemas:
 
-Aquí es donde entra **Git**.
+- No sabemos qué cambió
+- No podemos volver atrás fácilmente
+- No podemos colaborar sin sobrescribir archivos
+- Perdemos trabajo
 
----
-
-# 2️⃣ ¿Qué es Git?
-
-## 📌 Definición Simple
-
-**Git es un sistema de control de versiones.**
-
-Significa que:
-
-- Guarda el historial completo de tu proyecto
-- Permite volver a versiones anteriores
-- Permite trabajar sin perder cambios
-- Permite que varias personas trabajen al mismo tiempo
+Git resuelve estos problemas.
 
 ---
 
-## 🧠 ¿Cómo piensa Git?
+# 🧠 ¿Qué es Git?
 
-Git trabaja con "fotografías" del proyecto llamadas **commits**.
+## Definición
+
+Git es un **sistema de control de versiones distribuido**.
+
+Permite:
+
+- Guardar el historial completo de un proyecto
+- Volver a versiones anteriores
+- Trabajar en paralelo sin romper el proyecto principal
+- Colaborar de forma profesional
+
+---
+
+## Cómo funciona internamente (concepto simple)
+
+Git guarda "fotografías" del proyecto llamadas **commits**.
 
 Cada commit:
+
 - Guarda el estado completo del proyecto
 - Tiene un identificador único
-- Tiene autor
-- Tiene fecha
-- Tiene mensaje descriptivo
+- Tiene autor y fecha
+- Tiene un mensaje descriptivo
 
 Es como una máquina del tiempo para tu código.
 
 ---
 
-# 3️⃣ ¿Qué es GitHub?
+# ☁️ ¿Qué es GitHub?
 
-GitHub NO es Git.
+Git y GitHub no son lo mismo.
 
-## 📌 Git = herramienta local  
-## 📌 GitHub = plataforma en la nube
+| Git | GitHub |
+|------|--------|
+| Herramienta local | Plataforma en la nube |
+| Controla versiones | Aloja repositorios |
+| Funciona sin internet | Permite colaboración |
 
 GitHub permite:
 
-- Guardar tu repositorio online
-- Compartir tu código
-- Colaborar con otros
-- Tener respaldo en la nube
-
-Si Git es tu máquina del tiempo,  
-GitHub es el servidor donde guardas esa máquina.
+- Respaldar tu proyecto
+- Compartirlo
+- Colaborar
+- Crear portafolio profesional
 
 ---
 
-# 4️⃣ Conceptos Fundamentales
+# 📂 Conceptos Fundamentales
 
-## 📂 Repositorio
+## 📁 Repositorio
 
-Es la carpeta del proyecto que está siendo controlada por Git.
-
-Se crea con:
+Carpeta que está siendo controlada por Git.
 
 ```bash
 git init
