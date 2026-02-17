@@ -25,7 +25,7 @@ Este módulo te enseñará:
 
 1. [¿Por qué Git?](#-por-qué-git)
 2. [¿Qué es Git?](#-qué-es-git)
-3. [¿Qué es GitHub?](#%EF%B8%8F-qué-es-github)
+3. [¿Qué es GitHub?](#-qué-es-github)
 4. [Instalación de Git](#-instalación-de-git)
 5. [Verificación de Instalación](#-verificación-de-instalación)
 6. [Crear Cuenta en GitHub](#-crear-cuenta-en-github)
