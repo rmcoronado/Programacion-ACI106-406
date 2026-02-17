@@ -1,1 +1,89 @@
-Test
+# 🛡️ Introducción a Git y GitHub  
+## Control de Versiones para Estudiantes de Ingeniería
+
+---
+
+# 1️⃣ El Problema Antes de Git
+
+Imagina este escenario:
+
+- Tienes un archivo llamado `proyecto.py`
+- Haces cambios
+- Algo se rompe
+- Guardaste encima del archivo original
+- No sabes qué cambiaste
+- No puedes volver atrás 😰
+
+Entonces comienzas a crear archivos como:
+
+- proyecto_final.py  
+- proyecto_final_ahora_si.py  
+- proyecto_final_definitivo_v2.py  
+
+Esto es desorden.  
+Esto no escala.  
+Esto no es profesional.
+
+Aquí es donde entra **Git**.
+
+---
+
+# 2️⃣ ¿Qué es Git?
+
+## 📌 Definición Simple
+
+**Git es un sistema de control de versiones.**
+
+Significa que:
+
+- Guarda el historial completo de tu proyecto
+- Permite volver a versiones anteriores
+- Permite trabajar sin perder cambios
+- Permite que varias personas trabajen al mismo tiempo
+
+---
+
+## 🧠 ¿Cómo piensa Git?
+
+Git trabaja con "fotografías" del proyecto llamadas **commits**.
+
+Cada commit:
+- Guarda el estado completo del proyecto
+- Tiene un identificador único
+- Tiene autor
+- Tiene fecha
+- Tiene mensaje descriptivo
+
+Es como una máquina del tiempo para tu código.
+
+---
+
+# 3️⃣ ¿Qué es GitHub?
+
+GitHub NO es Git.
+
+## 📌 Git = herramienta local  
+## 📌 GitHub = plataforma en la nube
+
+GitHub permite:
+
+- Guardar tu repositorio online
+- Compartir tu código
+- Colaborar con otros
+- Tener respaldo en la nube
+
+Si Git es tu máquina del tiempo,  
+GitHub es el servidor donde guardas esa máquina.
+
+---
+
+# 4️⃣ Conceptos Fundamentales
+
+## 📂 Repositorio
+
+Es la carpeta del proyecto que está siendo controlada por Git.
+
+Se crea con:
+
+```bash
+git init
