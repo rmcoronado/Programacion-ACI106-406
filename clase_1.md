@@ -25,7 +25,7 @@ Este módulo te enseñará:
 
 1. [¿Por qué Git?](#-por-qué-git)
 2. [¿Qué es Git?](#-qué-es-git)
-3. [¿Qué es GitHub?](#-qué-es-github)
+3. [¿Qué es GitHub?](#%EF%B8%8F-qué-es-github)
 4. [Instalación de Git](#-instalación-de-git)
 5. [Verificación de Instalación](#-verificación-de-instalación)
 6. [Crear Cuenta en GitHub](#-crear-cuenta-en-github)
@@ -76,7 +76,7 @@ Es una máquina del tiempo para tu código.
 
 # ☁️ ¿Qué es GitHub?
 
-GitHub es una plataforma en la nube que aloja repositorios Git.
+GitHub es una plataforma en la nube que aloja repositorios de Git.
 
 | Git | GitHub |
 |------|--------|
@@ -110,18 +110,22 @@ Instalar Homebrew (si no lo tienes):
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+```
 Luego:
 
+```bash
 brew install git
+```
 
-Opción 2
+### Opción 2
 
 Instalar Xcode Command Line Tools:
 
+```bash
 xcode-select --install
+```
 
-🐧 LINUX
+## 🐧 LINUX
 Ubuntu / Debian
 sudo apt update
 sudo apt install git
