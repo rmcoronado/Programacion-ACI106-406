@@ -55,6 +55,16 @@ Sin control de versiones:
 
 Git resuelve esto guardando versiones completas del proyecto.
 
+## $\color{red}{\text{🛡️ El Escenario "Con Git" (El Superpoder)}}$
+
+**Máquina del Tiempo**: Git guarda una "foto" ($\color{red}{\text{commit}}$) de tu proyecto cada vez que tú quieres. Si rompes algo hoy, puedes volver a la versión de ayer en 1 segundo.
+
+**Trabajo en Equipo**: GitHub fusiona el trabajo de 10, 50 o 1000 ingenieros automáticamente, avisando si hay conflictos lógicos.
+
+**Seguridad**: Tu código vive en la nube (GitHub). Si tu laptop explota, bajas el código en una nueva y sigues trabajando.
+
+**En resumen**: Programar sin Git es como escribir una tesis de 500 páginas sin guardar el archivo nunca.
+
 ---
 
 # 🧠 ¿Qué es Git?
@@ -63,7 +73,7 @@ Git es un sistema de control de versiones distribuido.
 
 Guarda “fotografías” del proyecto llamadas commits.
 
-Cada commit tiene:
+Cada $\color{red}{\text{commit}}$ tiene:
 
 - Autor
 - Fecha
@@ -109,11 +119,6 @@ Se instalará también **Git Bash**.
 Instalar Homebrew (si no lo tienes):
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Luego:
-
-```bash
 brew install git
 ```
 
@@ -126,12 +131,21 @@ xcode-select --install
 ```
 
 ## 🐧 LINUX
-Ubuntu / Debian
-sudo apt update
-sudo apt install git
 
-Fedora
-sudo dnf install git
+Debian/Ubuntu
+For the latest stable version for your release of Debian/Ubuntu
+
+```bash
+apt-get install git
+```
+For Ubuntu, this PPA provides the latest stable upstream Git version
+
+```bash
+add-apt-repository ppa:git-core/ppa
+apt update; apt install git
+```
+
+**Para más información de Instalación visita el siguiente link: https://git-scm.com/install/windows**
 
 🔎 Verificación de Instalación
 
