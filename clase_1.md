@@ -179,17 +179,44 @@ Paso 6: Verificar correo
 
 Configura tu identidad (una sola vez):
 
+```bash
 git config --global user.name "Tu Nombre"
-git config --global user.email "tu_email@gmail.com"
+```
 
+```bash
+git config --global user.email "tu_email@gmail.com"
+```
 
 Verificar:
 
+```bash
 git config --list
+```
 
-🔐 Configuración de Llaves SSH
-1️⃣ Generar llave
+Configurar el nombre de Master a Main: 
+
+```bash
+git config --global init.defaultBranch main
+```
+
+Eliminar una configuración no deseada: 
+
+```bash
+git config --global --unset user.name
+```
+
+Activar colores en la terminal
+
+```bash
+git config --global color.ui auto
+```
+
+## 🔐 Configuración de Llaves SSH
+
+#### 1️⃣ Generar llave
+```bash
 ssh-keygen -t ed25519 -C "tu_email@gmail.com"
+```
 
 
 Presiona ENTER a todo.
