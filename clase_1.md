@@ -147,35 +147,35 @@ apt update; apt install git
 
 **Para más información de Instalación visita el siguiente link: https://git-scm.com/install/windows**
 
-🔎 Verificación de Instalación
+## 🔎 Verificación de Instalación
 
 En terminal:
 
+```bash
 git --version
-
+```
 
 Debe mostrar algo como:
 
-git version 2.x.x
+_git version 2.x.x_
 
-🌐 Crear Cuenta en GitHub
+## 🌐 Crear Cuenta en GitHub
 
-Ir a https://github.com
+Paso 1: Ir a https://github.com
 
-Click en "Sign up"
+Paso 2: Click en "Sign up"
 
-Ingresar email
+Paso 3: Ingresar email
 
-Crear contraseña
+Paso 4: Crear contraseña
 
-Elegir username profesional
+Paso 5: Elegir username profesional
 
-Verificar correo
+Paso 6: Verificar correo
 
-Consejo profesional:
-Usa un username serio. Evita cosas infantiles.
+**$\color{red}{\text{Consejo profesional:}}$** Usa un username que te identifique como un profesional, nada de soy LOBO therian, Goku, sayayin, etc...
 
-⚙️ Configuración Inicial de Git
+## ⚙️ Configuración Inicial de Git
 
 Configura tu identidad (una sola vez):
 
