@@ -304,8 +304,29 @@ ls
 
 Moverse hacia una carpeta: 
 ```bash
-cd  **direccion de carpeta (tip: usar Tab para autocompletar)**
+cd  direccion de carpeta (tip: usar Tab para autocompletar)
 ```
+
+Devolver a la carpeta superior: 
+
+```bash
+cd  ..
+```
+
+Crear una carpeta
+
+```bash
+mkdir nombre_de_carpeta
+```
+
+Visualizar en que direccion actual estas: 
+```bash
+pwd
+```
+
+
+**IMPORTANTE RECOMENDACION**: estudiar comandos bash.
+
 
 ## 🔗 Conectar Proyecto Local a GitHub
 
@@ -316,6 +337,7 @@ Click en "New"
 Nombre del repo
 
 No marcar README si ya tienes proyecto local
+
 
 ### 2️⃣ En proyecto local
 
@@ -356,6 +378,54 @@ git pull
 
 
 Antes de trabajar.
+
+
+## Clonar un repositorio en local: 
+
+A veces creamos el repositorio en github o queremos partir de uno ya existente. Para ello debemos aplicar los siguientes pasos: 
+
+1. Listar la carpeta o directorio donde estamos parados:
+   ```bash
+   ls
+   ```
+2. Moverse a la carpeta o directorio donde queremos clonar el repositorio
+   ```bash
+   cd direccion_de_carpeta
+   ```
+3. Ir a tu repositorio en github y copiar la dirección ssh (ir a botón verde $\color{green}{\text{<> Code}}$:
+    ```bash
+   git@github.com:rmcoronado/Programacion-ACI106-406.git
+   ```
+
+5.  Hacer git clone en la consola de gitbash:
+   ```bash
+   git clone git@github.com:rmcoronado/Programacion-ACI106-406.git
+   ```
+6. Moverse a la carpeta del repositorio:
+    ```bash
+   cd Programacion-ACI106-406/
+   ```
+7. Comprobar que todo quedó bien:
+   ```bash
+  git remote -v
+   ```
+
+Debe mostrar algo como:
+
+```bash
+origin  git@github.com:usuario/mi-proyecto.git (fetch)
+origin  git@github.com:usuario/mi-proyecto.git (push)
+```
+
+Verifica la rama: 
+```bash
+git branch
+```
+
+Debería aparecer que estas en la rama principal: **main**
+
+
+   
 
 🌿 Uso de Ramas (Profesional)
 
