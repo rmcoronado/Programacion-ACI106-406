@@ -213,56 +213,103 @@ git config --global color.ui auto
 
 ## 🔐 Configuración de Llaves SSH
 
+Esta llave es importante para conectar de forma automática y segura el repositorio local con github (repositorio en la nube)
+
 #### 1️⃣ Generar llave
 ```bash
 ssh-keygen -t ed25519 -C "tu_email@gmail.com"
 ```
-
-
 Presiona ENTER a todo.
 
-2️⃣ Iniciar agente SSH
+Verifica creación de la llave con el siguiente comando: 
+
+```bash
+ls ~/.ssh
+```
+
+Si ves archivos como:
+
+**id_ed25519**
+
+**id_ed25519.pub**
+
+Ya tienes una llave.
+
+Si no aparece nada → debes crearla.
+
+
+### 2️⃣ Iniciar agente SSH
+
 Windows / Mac
+
+```bash
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
+```
 
-3️⃣ Copiar llave pública
+### 3️⃣ Copiar llave pública
+
 Windows (Git Bash)
+```bash
 cat ~/.ssh/id_ed25519.pub | clip
-
+```
 Mac
+```bash
 pbcopy < ~/.ssh/id_ed25519.pub
-
+```
 Linux
+```bash
 cat ~/.ssh/id_ed25519.pub
-
+```
 
 Copiar manualmente.
 
-4️⃣ Agregar llave a GitHub
+#### 4️⃣ Agregar llave a GitHub
 
-Ir a GitHub
+1. Ir a GitHub
 
-Settings
+2. Click en tu foto → Settings
 
-SSH and GPG Keys
+3. Ir a SSH and GPG keys
 
-New SSH Key
+4. Click en New SSH key
 
-Pegar clave
+5. Pegar la llave copiada
 
-Guardar
+6. Guardar
 
-5️⃣ Verificar conexión
+### 5️⃣ Verificar conexión
+
+```bash
 ssh -T git@github.com
-
+```
 
 Debe decir:
 
-Hi username! You've successfully authenticated
+**Hi username! You've successfully authenticated**
 
-🔗 Conectar Proyecto Local a GitHub
-1️⃣ Crear repositorio en GitHub
+## Comandos bash importantes: 
+
+Eliminar archivos .* no deseados o que se crearon por error: 
+
+```bash
+rm -rf .git
+```
+
+Listar carpetas: 
+
+```bash
+ls
+```
+
+Moverse hacia una carpeta: 
+```bash
+cd  **direccion de carpeta (tip: usar Tab para autocompletar)**
+```
+
+## 🔗 Conectar Proyecto Local a GitHub
+
+### 1️⃣ Crear repositorio en GitHub
 
 Click en "New"
 
@@ -270,31 +317,38 @@ Nombre del repo
 
 No marcar README si ya tienes proyecto local
 
-2️⃣ En proyecto local
+### 2️⃣ En proyecto local
+
+```bash
 git init
 git add .
 git commit -m "Initial commit"
+```
 
-3️⃣ Conectar repositorio remoto
+### 3️⃣ Conectar repositorio remoto
+
+```bash
 git remote add origin git@github.com:USERNAME/REPO.git
-
+```
 
 Verificar:
-
+```bash
 git remote -v
+```
 
-4️⃣ Subir proyecto
+### 4️⃣ Subir proyecto
 git push -u origin main
 
 🔄 Flujo Profesional de Trabajo
 
 Siempre:
 
+```bash
 git status
 git add .
 git commit -m "mensaje claro"
 git push
-
+```
 
 En equipo:
 
@@ -389,3 +443,4 @@ Trabajas como profesional
 Colaboras como industria
 
 Bienvenido al desarrollo profesional.
+
