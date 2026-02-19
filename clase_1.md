@@ -330,16 +330,46 @@ pwd
 
 ## 🔗 Conectar Proyecto Local a GitHub
 
-### 1️⃣ Crear repositorio en GitHub
+Escenario
 
-Click en "New"
+Tienes esto:
 
-Nombre del repo
+```bash
+mi_proyecto/
+   archivo1.py
+   archivo2.py
+```
 
-No marcar README si ya tienes proyecto local
+✅ Siempre dentro de la carpeta del proyecto. $\color{red}{\text{Nunca fuera.}}$ 
 
 
-### 2️⃣ En proyecto local
+### 1️⃣ Entrar a la carpeta del proyecto
+```bash
+cd mi_proyecto
+```
+
+Verifica que estás en la carpeta: 
+```bash
+pwd
+```
+
+
+### 2️⃣ Inicializar Git (dentro de la carpeta)
+
+
+```bash
+git init
+```
+
+Eso crea:
+
+```bash
+mi_proyecto/.git
+```
+
+**Ahora esa carpeta ya es un repositorio.**
+
+
 
 ```bash
 git init
@@ -347,7 +377,26 @@ git add .
 git commit -m "Initial commit"
 ```
 
-### 3️⃣ Conectar repositorio remoto
+### 3️⃣ Agregar archivos
+```bash
+git add .
+```
+Y hacer el primer $\color{red}{\text{COMMIT}}$ : 
+```bash
+git commit -m "Primer commit"
+```
+
+### 4️⃣ Crear repositorio en GitHub
+1. Ir a GitHub
+2. Click en New repository
+3. Poner nombre (RECOMENDADO QUE SEA EL MISMO NOMBRE DEL PROYECTO LOCAL)
+4. ⚠ No marcar "Initialize with README"
+5. Crear
+
+GitHub te mostrará instrucciones tipo:
+```bash
+git remote add origin ...
+```
 
 ```bash
 git remote add origin git@github.com:USERNAME/REPO.git
@@ -358,7 +407,6 @@ Verificar:
 git remote -v
 ```
 
-### 4️⃣ Subir proyecto
 git push -u origin main
 
 🔄 Flujo Profesional de Trabajo
