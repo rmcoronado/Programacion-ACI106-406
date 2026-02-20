@@ -637,7 +637,7 @@ No hay vuelta atrás (salvo reflog)
 
 
 ---
-### 4️⃣ Crear repositorio en GitHub
+### 3️⃣ Crear repositorio en GitHub
 1. Ir a GitHub
 2. Click en New repository
 3. Poner nombre (RECOMENDADO QUE SEA EL MISMO NOMBRE DEL PROYECTO LOCAL)
@@ -679,7 +679,7 @@ git pull
 Antes de trabajar.
 
 
-## Clonar un repositorio en local: 
+## 4️⃣ Clonar un repositorio en local: 
 
 A veces creamos el repositorio en github o queremos partir de uno ya existente. Para ello debemos aplicar los siguientes pasos: 
 
