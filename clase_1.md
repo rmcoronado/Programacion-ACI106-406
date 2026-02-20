@@ -390,7 +390,7 @@ mi_proyecto/.git
 **Ahora esa carpeta ya es un repositorio.**
 
 ----
-Ahora hacemos:
+Ahora podemos ver el estatus con:
 
 ```bash
 git status
@@ -409,7 +409,11 @@ Modificaste archivo.py
 
 Aún NO lo agregaste al staging
 ----
-📂 Si creas un archivo nuevo:
+📂 Qué pasa si creas un archivo nuevo dentro de tu proyecto:
+```bash
+git status
+```
+Muestra lo siguiente:
 ```bash
 Untracked files:
   nuevo.py
@@ -418,7 +422,7 @@ Eso significa:
 
 Git lo ve, pero aún no lo está siguiendo.
 ----
-🟢 Después debes hacer:
+🟢 Qué debes hacer en ambos casos:
 ```bash
 git add .
 ```
@@ -463,7 +467,7 @@ Git:
 git add NO guarda historial.
 Solo prepara.
 ----
-Y hacer el primer $\color{red}{\text{COMMIT}}$ : 
+Ahora debemos hacer el primer $\color{red}{\text{COMMIT}}$ : 
 ```bash
 git commit -m "MENSAJE"
 ```
@@ -511,17 +515,18 @@ Luego escribes el mensaje arriba, guardas y cierras.
 
 Cuando haces commit:
 
-1️⃣ Crea snapshot completo
-2️⃣ Genera hash SHA único
-3️⃣ Guarda autor
-4️⃣ Guarda fecha
-5️⃣ Guarda mensaje
-6️⃣ Guarda referencia al commit anterior
+1. Crea snapshot completo
+2. Genera hash SHA único
+3. Guarda autor
+4. Guarda fecha
+5. Guarda mensaje
+6. Guarda referencia al commit anterior
 
 Git NO guarda solo cambios.
 Guarda un árbol completo del proyecto.
 
 🔍 Ejemplo real de salida:
+---
 ```bash
 [main 91ac2f4] Agrega validación de entrada
  2 files changed, 10 insertions(+), 2 deletions(-)
@@ -540,8 +545,98 @@ Interpretación:
 
 **2 eliminadas**
 
+🔐 ¿Qué es el hash SHA en Git?
 ----
 
+
+Cada commit en Git tiene un identificador único, algo como:
+```bash
+91ac2f4e8b3c2a7d9f6a1c0e4d...
+```
+
+Eso es un SHA-1 hash.
+
+📌 Qué significa
+
+Es un código generado a partir de:
+
+**Contenido de los archivos**
+
+**Mensaje del commit**
+
+**Autor**
+
+**Fecha**
+
+**Commit padre**
+
+Si cambias una sola letra, el hash cambia completamente.
+
+🧠 Por qué es importante
+----
+Porque hace que Git sea:
+
+🔒 Seguro
+
+📦 Inmutable
+
+🧾 Trazable
+
+Git no dice “versión 5”.
+Git dice “commit 91ac2f4”.
+
+📌 Puedes verlo con:
+---
+```bash
+git log
+```
+El resultado en consola es: 
+```bash
+commit e76321cd27af8d61c00f89cb9b4598faefeaf1f0 (HEAD -> main)
+Author: rmcoronado <rmcoronado@uc.cl>
+Date:   Fri Feb 20 16:06:12 2026 -0300
+```
+
+Cómo deshacer un commit
+----
+Hay varias formas. Aquí las más importantes:
+
+A) Deshacer el último commit pero mantener cambios:
+```bash
+git reset --soft HEAD~1
+```
+Resultado:
+
+Se borra el commit
+
+Los cambios vuelven al staging
+
+---
+B) Borrar commit y sacar cambios del staging
+```bash
+git reset --mixed HEAD~1
+```
+(default)
+
+Se borra commit
+
+Cambios quedan en working directory
+
+---
+C) Borrar TODO (cuidado) 🔴
+```bash
+git reset --hard HEAD~1
+```
+Se borra commit
+
+Se borran cambios
+
+No hay vuelta atrás (salvo reflog)
+
+---
+
+
+---
 ### 4️⃣ Crear repositorio en GitHub
 1. Ir a GitHub
 2. Click en New repository
