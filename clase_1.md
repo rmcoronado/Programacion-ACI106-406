@@ -343,6 +343,25 @@ mi_proyecto/
 ✅ Siempre dentro de la carpeta del proyecto. $\color{red}{\text{Nunca fuera.}}$ 
 
 
+---
+Antes de empezar: el modelo mental correcto
+
+Git tiene 3 áreas principales:
+
+```bash
+1️⃣ Working Directory  → tus archivos reales
+2️⃣ Staging Area       → lo que prepararás para commit
+3️⃣ Repository (.git)  → donde viven los commits
+```
+Visualmente
+
+```bash
+Archivo → git add → Staging (preparing and organizing a commit) → git commit → Historial
+```
+---
+
+
+
 ### 1️⃣ Entrar a la carpeta del proyecto
 ```bash
 cd mi_proyecto
@@ -352,6 +371,7 @@ Verifica que estás en la carpeta:
 ```bash
 pwd
 ```
+
 
 
 ### 2️⃣ Inicializar Git (dentro de la carpeta)
@@ -369,22 +389,158 @@ mi_proyecto/.git
 
 **Ahora esa carpeta ya es un repositorio.**
 
-
+----
+Ahora hacemos:
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
+git status
 ```
+Podrías ver: 
+```bash
+On branch main
+Changes not staged for commit:
+  modified:   archivo.py
+```
+¿Qué significa?
 
-### 3️⃣ Agregar archivos
+Estás en la rama main
+
+Modificaste archivo.py
+
+Aún NO lo agregaste al staging
+----
+📂 Si creas un archivo nuevo:
+```bash
+Untracked files:
+  nuevo.py
+```
+Eso significa:
+
+Git lo ve, pero aún no lo está siguiendo.
+----
+🟢 Después debes hacer:
 ```bash
 git add .
 ```
+📌 Qué hace
+
+Mueve cambios desde:
+```bash
+Working Directory → Staging Area
+```
+El punto **.** significa: Todo lo que está en esta carpeta y subcarpetas.
+
+Siguiendo el ejemplo de nuevo.py, el resultado sería:
+```bash
+Changes to be committed:
+  modified: nuevo.py
+```
+Eso significa:
+
+Ya está en staging.
+Está listo para el commit.
+
+🧠 Internamente
+
+git status compara:
+```bash
+Working Directory  vs  Staging Area
+Staging Area       vs  Último Commit
+```
+Y te muestra diferencias.
+---
+
+🧠 Qué pasa internamente con **git add .**
+
+Git:
+
+1. Calcula hash del archivo
+2. Guarda snapshot en staging
+3. No crea commit aún
+
+**Muy importante:**
+
+git add NO guarda historial.
+Solo prepara.
+----
 Y hacer el primer $\color{red}{\text{COMMIT}}$ : 
 ```bash
-git commit -m "Primer commit"
+git commit -m "MENSAJE"
 ```
+Salida típica:
+```bash
+[main 3f5a2c1] Mensaje
+ 1 file changed, 2 insertions(+)
+```
+
+Eso significa:
+
+**Rama**: main
+
+**Hash** corto del commit: 3f5a2c1
+
+**Mensaje**
+
+**Archivos afectados**:  1 file changed
+
+**Líneas agregadas/eliminadas**:2 insertions(+)
+
+----
+🧪 Con -v
+```bash
+git commit -v
+```
+Se abre el editor (por ejemplo Visual Studio Code).
+
+Y verás:
+```bash
+# On branch main
+# Changes to be committed:
+#   modified: archivo.py
+
+diff --git a/archivo.py b/archivo.py
++ nueva linea agregada
+- linea eliminada
+```
+Eso es el diff completo.
+
+Luego escribes el mensaje arriba, guardas y cierras.
+
+----
+🧠 Qué hace internamente git commit
+
+Cuando haces commit:
+
+1️⃣ Crea snapshot completo
+2️⃣ Genera hash SHA único
+3️⃣ Guarda autor
+4️⃣ Guarda fecha
+5️⃣ Guarda mensaje
+6️⃣ Guarda referencia al commit anterior
+
+Git NO guarda solo cambios.
+Guarda un árbol completo del proyecto.
+
+🔍 Ejemplo real de salida:
+```bash
+[main 91ac2f4] Agrega validación de entrada
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+```
+Interpretación:
+
+**main** → rama
+
+**91ac2f4** → hash corto
+
+**Mensaje**
+
+**2 archivos cambiaron**
+
+**10 líneas agregadas**
+
+**2 eliminadas**
+
+----
 
 ### 4️⃣ Crear repositorio en GitHub
 1. Ir a GitHub
