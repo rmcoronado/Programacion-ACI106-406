@@ -633,10 +633,331 @@ Se borran cambios
 
 No hay vuelta atrás (salvo reflog)
 
+Cómo cambiar entre versiones
+----
+Primero: qué es una “versión” en Git
 ---
+En Git no existen “versiones” como v1, v2, v3 automáticamente.
+
+Las versiones son:
+
+🔹 Commits
+
+🔹 Tags (versiones etiquetadas como v1.0)
+
+🔹 Ramas (branch)
+
+Moverte entre versiones casi siempre significa:
+
+Cambiar el commit al que apunta tu HEAD.
+
+Paso 1 — Ver los commits disponibles
+---
+```bash
+git log --oneline
+```
+Salida de ejemplo:
+```bash
+a3f9d2c Agrega validación
+91ac2f4 Corrige bug
+5b7e123 Primera versión
+```
+Cada línea es una versión.
+
+Moverte a un commit específico (modo exploración)
+---
+Comando:
+```bash
+git checkout 91ac2f4
+```
+O moderno:
+```bash
+git switch --detach 91ac2f4
+```
+**Qué pasa cuando lo haces**
+
+Git muestra algo como:
+```bash
+You are in 'detached HEAD' state.
+```
+
+Eso significa:
+
+Estás mirando una versión antigua, pero no estás en una rama.
+
+Tu proyecto ahora está exactamente como estaba en ese commit.
+
+¿Qué es HEAD?
+---
+HEAD es un puntero que normalmente apunta a:
+```bash
+HEAD → main → último commit
+```
+Cuando haces checkout a un commit:
+```bash
+HEAD → 91ac2f4 (sin rama)
+```
+Eso es estado detached.
+
+🛑 Importante
+----
+Si modificas archivos en este estado y haces commit:
+
+El commit queda “huérfano” si no creas una rama.
+
+Forma correcta de trabajar desde una versión antigua 🌿
+---
+Si quieres modificar desde un commit antiguo:
+```bash
+git checkout -b nueva-rama 91ac2f4
+```
+O:
+```bash
+git switch -c nueva-rama 91ac2f4
+```
+Ahora:
+```bash
+HEAD → nueva-rama → 91ac2f4
+```
+Y puedes trabajar seguro.
+
+Volver a la versión más reciente
+---
+Si estabas en detached:
+```bash
+git switch main
+```
+
+O:
+```bash
+git checkout main
+```
+Y vuelves al último commit de esa rama.
+
+Diferencia importante: checkout vs reset
+---
+🔹 checkout / switch
+
+Cambia lo que estás mirando.
+
+🔹 reset
+
+Reescribe historial.
+
+Ejemplo:
+```bash
+git reset --hard 91ac2f4
+```
+
+Eso mueve la rama actual hacia atrás hasta un punto X y borra commits posteriores al punto X que hayas guardado.
+
+⚠️ Mucho más peligroso.
 
 
+Resumen de formas de moverte
 ---
+| Objetivo                      | Comando                     | Seguro |
+| ----------------------------- | --------------------------- | ------ |
+| Solo mirar versión            | `git checkout <hash>`       | ✅      |
+| Trabajar desde ahí            | `git switch -c rama <hash>` | ✅      |
+| Volver atrás borrando commits | `git reset --hard <hash>`   | ⚠️     |
+| Volver a rama principal       | `git switch main`           | ✅      |
+
+Ejemplo completo paso a paso
+---
+Supongamos:
+```bash
+A --- B --- C --- D (main)
+```
+Quieres ir a B.
+
+1. Ver historial
+```bash
+git log --oneline
+```
+2. Ir a B
+```bash
+git checkout <hash-de-B>
+```
+Ahora estás en: 
+```bash
+A --- B (HEAD)
+```
+
+3. Volver a main:
+   ```bash
+   git switch main
+   ```
+Y vuelves a:
+  ```bash
+   A --- B --- C --- D (HEAD)
+   ```
+
+Concepto clave
+
+Moverte entre versiones ≠ borrar historia.
+
+Solo estás cambiando el puntero HEAD.
+
+¿Qué es realmente una rama (branch)?
+----
+Muchos creen que una rama es una copia del proyecto.
+
+❌ No lo es.
+
+Una rama es solo un puntero a un commit.
+
+Ejemplo visual
+---
+Imagina esto:
+```bash
+A --- B --- C  (main)
+```
+Aquí:
+
+**main** apunta a **C**
+
+**HEAD** apunta a **main**
+
+Crear una rama nueva
+---
+```bash
+git switch -c feature-login
+```
+
+Ahora:
+```bash
+A --- B --- C  (main)
+               \
+                (feature-login)
+```
+Ambas ramas apuntan a C.
+
+Haces un commit en feature-login
+---
+```bash
+A --- B --- C  (main)
+               \
+                D  (feature-login)
+```
+Solo la nueva rama avanza.
+
+**main** sigue en **C**.
+
+¿Qué es un merge?
+----
+Un merge combina dos historias.
+
+Supongamos que estás en <mark>main</mark> y quieres traer los cambios de <mark>feature-login</mark> .
+```bash
+git switch main
+git merge feature-login
+```
+Resultado típico
+---
+Si no hubo conflictos:
+```bash
+A --- B --- C -------- E  (main)
+               \      /
+                D ----    (feature-login)
+```
+Git crea un commit especial llamado **merge commit (E)**.
+
+Qué contiene un merge commit
+---
+
+1. Tiene dos padres (C y D)
+2. Une ambos historiales
+3. Conserva trazabilidad completa
+
+¿Qué pasa si hay conflictos?
+----
+Git te dirá algo como:
+```bash
+CONFLICT (content): Merge conflict in archivo.py
+```
+El archivo quedará así:
+
+```bash
+<<<<<<< HEAD
+codigo en main
+=======
+codigo en feature-login
+>>>>>>> feature-login
+```
+
+Tú debes:
+---
+
+1. Editar manualmente
+2. Resolver el conflicto
+3. Guardar
+4. Hacer:
+   ```bash
+   git add archivo.py
+   git commit
+   ```
+   
+  ¿Qué es un conflicto?
+   ---
+Un conflicto ocurre cuando:
+
+Dos ramas modificaron la misma parte del mismo archivo de forma distinta.
+
+Git no puede decidir cuál versión es correcta.
+
+Entonces te pide que elijas manualmente.
+
+Ejemplo visual paso a paso
+----
+Supongamos este historial:
+```bash
+A --- B --- C   (main)
+       \
+        D --- E  (feature)
+```
+Ambas ramas partieron desde B.
+
+Supongamos que el archivo app.py era así en B:
+---
+```bash
+def saludar():
+    print("Hola")
+```
+
+En main lo cambiaste a:
+```bash
+def saludar():
+    print("Hola mundo")
+```
+Commit C.
+
+En feature lo cambiaste a:
+---
+```bash
+def saludar():
+    print("Hola usuario")
+```
+Commit E.
+
+Intentas hacer merge
+---
+Te mueves a main:
+```bash
+git switch main
+```
+Luego:
+```bash
+git merge feature
+```
+
+💥 Git responde:
+```bash
+Auto-merging app.py
+CONFLICT (content): Merge conflict in app.py
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
 ### 3️⃣ Crear repositorio en GitHub
 1. Ir a GitHub
 2. Click en New repository
