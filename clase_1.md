@@ -958,13 +958,167 @@ CONFLICT (content): Merge conflict in app.py
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-### 3️⃣ Crear repositorio en GitHub
+Así queda el archivo
+```bash
+def saludar():
+<<<<<<< HEAD
+    print("Hola mundo")
+=======
+    print("Hola usuario")
+>>>>>>> feature
+```
+
+Qué significa esto
+---
+| Parte     | Significado                  |
+| --------- | ---------------------------- |
+| `HEAD`    | Lo que estaba en main        |
+| `=======` | Separador                    |
+| `feature` | Lo que viene de la otra rama |
+
+Cómo resolverlo correctamente
+---
+Debes editar el archivo; tienes 3 opciones:
+
+Opción A — Elegir main
+
+Dejas:
+```bash
+def saludar():
+    print("Hola mundo")
+```
+
+Opción B — Elegir feature
+
+Dejas:
+```bash
+def saludar():
+    print("Hola usuario")
+```
+
+Opción C — Combinar
+
+Dejas:
+```bash
+def saludar():
+    print("Hola mundo")
+    print("Hola usuario")
+```
+
+⚠️ Debes borrar completamente:
+---
+```bash
+<<<<<<< HEAD
+=======
+>>>>>>> feature
+```
+
+Confirmar resolución
+---
+Después de editar y guardar:
+```bash
+git add app.py
+```
+Luego:
+```bash
+git commit
+```
+Git creará el commit de merge.
+
+Resultado final
+---
+```bash
+A --- B --- C -------- M (main)
+       \              /
+        D --- E ------
+```
+M es el merge commit.
+
+Cómo ver qué archivos están en conflicto
+---
+Si estás en conflicto:
+```bash
+git status
+```
+Verás: 
+```bash
+Unmerged paths:
+  both modified:   app.py
+```
+
+Si quieres cancelar el merge
+---
+Si te arrepientes:
+```bash
+git merge --abort
+```
+
+Todo vuelve al estado previo.
+
+⚡ Herramientas visuales (muy útil)
+---
+Si usas Visual Studio Code:
+
+Te mostrará botones como:
+
+- Accept Current Change
+- Accept Incoming Change
+- Accept Both Changes
+
+Mucho más cómodo que editar a mano.
+
+Flujo profesional recomendado
+-----
+```bash
+git switch main
+git pull (se explica más adelante)
+git merge feature
+# resolver conflictos
+git add .
+git commit
+git push (se explica más adelante)
+```
+
+Resumen clave
+----
+| Situación              | Qué hacer           |
+| ---------------------- | ------------------- |
+| Conflicto detectado    | Editar archivo      |
+| Ver archivos afectados | `git status`        |
+| Confirmar resolución   | `git add`           |
+| Crear merge commit     | `git commit`        |
+| Cancelar merge         | `git merge --abort` |
+
+Consejo profesional importante
+----
+Para reducir conflictos:
+
+1. Haz commits pequeños
+2. Haz pull frecuente
+3. No trabajes semanas sin sincronizar
+4. Divide tareas por archivos si es posible
+
+### Conectar el repositorio local con la Nube
+
+Flujo profesional recomendado
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin git@github.com:usuario/proyecto.git
+git branch -M main
+git push -u origin main
+```
+
+#### Crear repositorio en GitHub
 1. Ir a GitHub
 2. Click en New repository
 3. Poner nombre (RECOMENDADO QUE SEA EL MISMO NOMBRE DEL PROYECTO LOCAL)
 4. ⚠ No marcar "Initialize with README"
 5. Crear
 
+Conectar tu repo local al remoto
+---
 GitHub te mostrará instrucciones tipo:
 ```bash
 git remote add origin ...
@@ -978,29 +1132,34 @@ Verificar:
 ```bash
 git remote -v
 ```
-
-git push -u origin main
-
-🔄 Flujo Profesional de Trabajo
-
-Siempre:
-
+Debe mostrar:
 ```bash
-git status
-git add .
-git commit -m "mensaje claro"
-git push
+origin  https://github.com/usuario/simulador-mrf.git (fetch)
+origin  https://github.com/usuario/simulador-mrf.git (push)
 ```
 
-En equipo:
+Asegurar nombre de rama principal
+---
+```bash
+git branch -M main
+```
 
-git pull
+Subir el proyecto
+---
+```bash
+git push -u origin main
+```
+Salida típica:
+```bash
+Enumerating objects...
+Writing objects...
+To https://github.com/usuario/simulador-mrf.git
+ * [new branch] main -> main
+```
 
+Listo 🎉 ya está conectado.
 
-Antes de trabajar.
-
-
-## 4️⃣ Clonar un repositorio en local: 
+## Clonar un repositorio en local: 
 
 A veces creamos el repositorio en github o queremos partir de uno ya existente. Para ello debemos aplicar los siguientes pasos: 
 
@@ -1037,6 +1196,7 @@ origin  git@github.com:usuario/mi-proyecto.git (fetch)
 origin  git@github.com:usuario/mi-proyecto.git (push)
 ```
 
+
 Verifica la rama: 
 ```bash
 git branch
@@ -1044,38 +1204,177 @@ git branch
 
 Debería aparecer que estas en la rama principal: **main**
 
+Diferencia entre fetch, pull y push
+----
+Porque Git distingue entre:
 
-   
+🔽 (fetch) → desde dónde DESCARGA cambios
 
-🌿 Uso de Ramas (Profesional)
+🔼 (push) → hacia dónde ENVÍA cambios
 
-Crear rama:
+Normalmente ambas URLs son iguales.
 
-git checkout -b nueva_funcionalidad
+Pero podrían ser distintas (por ejemplo, en forks o servidores distintos).
+
+git fetch
+---
+Descarga cambios del remoto, pero NO los mezcla con tu rama actual.
+```bash
+git fetch origin
+```
+Qué hace:
+```bash
+GitHub → tu repo local (pero en rama remota)
+```
+No modifica tus archivos de trabajo.
+
+git pull
+---
+Es equivalente a:
+```bash
+git fetch
+git merge
+```
+O sea:
+
+1. Descarga cambios
+2. Los combina con tu rama actual
+```bash
+GitHub → descarga → mezcla automáticamente
+```
+git push
+---
+Envía tus commits locales al remoto.
+```bash
+Tu máquina → GitHub
+```
+
+🧠 Visualización clara
+----
+Imagina esto:
+```bash
+Tu PC              GitHub
+A---B---C   ←→     A---B
+```
+Otra persona dejó el repo en B.
+
+Tú hiciste commit C localmente.
+
+Si haces git push: Git sube C.
+---
+Si alguien hizo D en GitHub
+---
+```bash
+Tu PC              GitHub
+A---B---C          A---B---D
+```
+
+Si haces push ahora:
+
+❌ Fallará.
+
+¿Por qué hacer pull antes de push?
+---
+Porque tu historia puede estar desactualizada.
+
+Si GitHub tiene commits que tú no tienes:
+```bash
+Tu PC:      A---B---C
+GitHub:     A---B---D
+```
+Git no puede simplemente agregar C encima de D sin que tú lo revises.
+
+Por eso te dirá:
+```bash
+rejected (non-fast-forward)
+```
+
+Flujo correcto profesional
+---
+Antes de subir cambios:
+```bash
+git pull --rebase
+git push
+```
+Esto:
+
+1. Descarga cambios remotos
+2. Coloca tus commits encima
+3. Luego sube todo limpio
+
+Qué significa "non-fast-forward"
+----
+Un push es "fast-forward" cuando:
+```bash
+A---B---C
+        ↑
+     remoto
+```
+Tu commit simplemente avanza la rama.
+
+Pero si hay divergencia:
+```bash
+      C
+     /
+A---B
+     \
+      D
+```
+
+Ya no es línea recta.
+
+Hay que integrar primero.
+
+Ejemplo real paso a paso
+----
+Supongamos:
+```bash
+git add .
+git commit -m "Agrego función"
+```
+Luego haces:
+```bash
+git push
+```
+Y sale:
+```bash
+! [rejected] main -> main (non-fast-forward)
+```
+Solución:
+```bash
+git pull --rebase
+git push
+```
+
+Resumen mental definitivo
+-----
+
+🔼 push = envío mis commits
+
+🔽 fetch = miro lo que hay en remoto
+
+🔽 pull = traigo y mezclo
+
+⚠️ pull antes de push evita conflictos
+
+Consejo profesional importante
+-----
+Configura pull con rebase por defecto:
+```bash
+git config --global pull.rebase true
+```
+Así evitas muchos commits de merge innecesarios.
 
 
-Volver a main:
+## Buenas Prácticas
 
-git checkout main
+1. Commits pequeños y frecuentes
 
+2. Mensajes claros
 
-Fusionar:
+3. No subir archivos grandes innecesarios
 
-git merge nueva_funcionalidad
-
-✅ Buenas Prácticas
-
-Commits pequeños y frecuentes
-
-Mensajes claros
-
-No subir archivos grandes innecesarios
-
-Usar .gitignore
-
-Hacer pull antes de push
-
-Usar ramas para experimentar
+3. Usar .gitignore
 
 📄 Ejemplo de .gitignore (Python)
 __pycache__/
@@ -1083,33 +1382,40 @@ __pycache__/
 .env
 venv/
 
-❌ Errores Comunes
+5. Hacer pull antes de push
 
-Hacer un commit gigante
+6. Usar ramas para experimentar
 
-Mensajes como "cambios"
 
-No usar ramas
+## ❌ Errores Comunes
 
-Subir claves privadas
+1. Hacer un commit gigante
 
-No usar SSH
+2. Mensajes como "cambios"
+
+2. No usar ramas
+
+3. Subir claves privadas
+
+4. No usar SSH
+
 
 🧠 Tips Profesionales
+----
+1. Usa git log --oneline
 
-Usa git log --oneline
+2. Usa git diff
 
-Usa git diff
+3. Usa git branch
 
-Usa git branch
+4. Aprende a leer conflictos
 
-Aprende a leer conflictos
+5. Nunca subas archivos sensibles
 
-Nunca subas archivos sensibles
-
-Crea commits descriptivos
+6. Crea commits descriptivos
 
 🧪 Checklist Profesional
+----
 
 ☑ Git instalado
 ☑ Cuenta GitHub creada
@@ -1119,18 +1425,18 @@ Crea commits descriptivos
 ☑ Rama creada y fusionada
 
 🎯 Conclusión
+----
+1. Git no es solo una herramienta.
 
-Git no es solo una herramienta.
+2. Es una competencia profesional obligatoria.
 
-Es una competencia profesional obligatoria.
+3. Si dominas Git:
 
-Si dominas Git:
+4. Piensas como ingeniero
 
-Piensas como ingeniero
+5. Trabajas como profesional
 
-Trabajas como profesional
-
-Colaboras como industria
+6. Colaboras como industria
 
 Bienvenido al desarrollo profesional.
-
+---
