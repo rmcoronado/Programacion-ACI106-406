@@ -188,7 +188,7 @@ git config --global user.email "tu_email@gmail.com"
 ```
 
 Verificar:
-
+---
 ```bash
 git config --list
 ```
@@ -200,7 +200,7 @@ git config --global init.defaultBranch main
 ```
 
 Eliminar una configuración no deseada: 
-
+---
 ```bash
 git config --global --unset user.name
 ```
@@ -222,7 +222,7 @@ ssh-keygen -t ed25519 -C "tu_email@gmail.com"
 Presiona ENTER a todo.
 
 Verifica creación de la llave con el siguiente comando: 
-
+---
 ```bash
 ls ~/.ssh
 ```
@@ -297,29 +297,32 @@ rm -rf .git
 ```
 
 Listar carpetas: 
+---
 
 ```bash
 ls
 ```
 
 Moverse hacia una carpeta: 
+---
 ```bash
 cd  direccion de carpeta (tip: usar Tab para autocompletar)
 ```
 
 Devolver a la carpeta superior: 
-
+---
 ```bash
 cd  ..
 ```
 
 Crear una carpeta
-
+---
 ```bash
 mkdir nombre_de_carpeta
 ```
 
 Visualizar en que direccion actual estas: 
+---
 ```bash
 pwd
 ```
@@ -349,9 +352,9 @@ Antes de empezar: el modelo mental correcto
 Git tiene 3 áreas principales:
 
 ```bash
-1️⃣ Working Directory  → tus archivos reales
-2️⃣ Staging Area       → lo que prepararás para commit
-3️⃣ Repository (.git)  → donde viven los commits
+ Working Directory  → tus archivos reales
+ Staging Area       → lo que prepararás para commit
+ Repository (.git)  → donde viven los commits
 ```
 Visualmente
 
@@ -359,7 +362,6 @@ Visualmente
 Archivo → git add → Staging (preparing and organizing a commit) → git commit → Historial
 ```
 ---
-
 
 
 ### 1️⃣ Entrar a la carpeta del proyecto
@@ -427,6 +429,7 @@ Git lo ve, pero aún no lo está siguiendo.
 git add .
 ```
 📌 Qué hace
+---
 
 Mueve cambios desde:
 ```bash
@@ -435,6 +438,7 @@ Working Directory → Staging Area
 El punto **.** significa: Todo lo que está en esta carpeta y subcarpetas.
 
 Siguiendo el ejemplo de nuevo.py, el resultado sería:
+---
 ```bash
 Changes to be committed:
   modified: nuevo.py
@@ -444,7 +448,8 @@ Eso significa:
 Ya está en staging.
 Está listo para el commit.
 
-🧠 Internamente
+🧠 Internament
+---
 
 git status compara:
 ```bash
@@ -452,21 +457,21 @@ Working Directory  vs  Staging Area
 Staging Area       vs  Último Commit
 ```
 Y te muestra diferencias.
----
+
 
 🧠 Qué pasa internamente con **git add .**
-
+---
 Git:
 
 1. Calcula hash del archivo
 2. Guarda snapshot en staging
 3. No crea commit aún
 
-**Muy importante:**
-
+Muy importante:
+---
 git add NO guarda historial.
 Solo prepara.
-----
+---
 Ahora debemos hacer el primer $\color{red}{\text{COMMIT}}$ : 
 ```bash
 git commit -m "MENSAJE"
@@ -478,7 +483,7 @@ Salida típica:
 ```
 
 Eso significa:
-
+---
 **Rama**: main
 
 **Hash** corto del commit: 3f5a2c1
@@ -489,8 +494,9 @@ Eso significa:
 
 **Líneas agregadas/eliminadas**:2 insertions(+)
 
-----
+
 🧪 Con -v
+----
 ```bash
 git commit -v
 ```
@@ -510,8 +516,9 @@ Eso es el diff completo.
 
 Luego escribes el mensaje arriba, guardas y cierras.
 
-----
+
 🧠 Qué hace internamente git commit
+----
 
 Cuando haces commit:
 
@@ -557,7 +564,7 @@ Cada commit en Git tiene un identificador único, algo como:
 Eso es un SHA-1 hash.
 
 📌 Qué significa
-
+---
 Es un código generado a partir de:
 
 **Contenido de los archivos**
@@ -674,7 +681,8 @@ O moderno:
 ```bash
 git switch --detach 91ac2f4
 ```
-**Qué pasa cuando lo haces**
+Qué pasa cuando lo haces
+---
 
 Git muestra algo como:
 ```bash
