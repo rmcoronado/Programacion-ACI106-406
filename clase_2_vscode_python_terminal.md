@@ -38,7 +38,11 @@ Al finalizar la clase deberías poder:
 3. Después de instalar, reinicia la terminal si quieres usar el comando `code`.
 
 ✅ **Tip importante:** el instalador agrega VS Code al `%PATH%` para poder usar `code .` (abre VS Code en esa carpeta).  
-Referencia: https://code.visualstudio.com/docs/setup/windows
+Referencia: https://code.visualstudio.com/docs/setup/windows. Para verificar, abrán git bash y escriban: 
+```bash
+code
+```
+Esto debería abrir automaticamente VS code.
 
 #### macOS
 1. Descarga el `.dmg`.
