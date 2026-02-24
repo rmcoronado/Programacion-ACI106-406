@@ -515,8 +515,9 @@ pip install requests
 ```
 Paso 3 — Generar el archivo automáticamente
 
-pip freeze > requirements.txt
+
 ```bash
+pip freeze > requirements.txt
 ```
 Esto crea el archivo en la raíz del proyecto.
 
