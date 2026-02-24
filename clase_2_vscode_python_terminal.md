@@ -592,6 +592,32 @@ __pycache__/
 .DS_Store
 Thumbs.db
 ```
----
 Guardar.
 
+----
+**¿Qué es REPL?**
+
+REPL significa:
+
+Read
+Eval
+Print
+Loop
+
+---
+Ejemplo simple
+
+Si abres una terminal y escribes:
+```bash
+python
+```
+Verás algo así:
+```bash
+>>>
+```
+Ese >>> indica que estás dentro del REPL.
+
+Ahora escribes:
+```python
+2 + 2
+```
