@@ -498,176 +498,100 @@ Si otra persona clona tu proyecto, solo debe hacer:
 ```bash
 pip install -r requirements.txt
 ```
----
-
-### 4.2 Crear un entorno desde VS Code (cuando esté disponible)
-VS Code puede ayudarte a crear entornos y detectar dependencias.
-
-Pistas útiles del doc:
-- Por defecto puede crear `.venv` y elegir el Python más reciente disponible.
-- Si existe `requirements.txt` o `pyproject.toml`, puede instalar dependencias automáticamente.
-
-Referencia: https://code.visualstudio.com/docs/python/environments
-
-### 4.3 Variables de entorno con `.env`
-Puedes inyectar variables a terminales desde un archivo `.env` (útil para llaves/API en desarrollo).
-
-Referencia: https://code.visualstudio.com/docs/python/environments
-
-Ejemplo `.env` (NO lo subas al repo si tiene secretos):
-```env
-API_KEY=tu-clave
-ENV=dev
-```
+Y tendrá exactamente las mismas versiones.
 
 ---
+**PASO A PASO — Crear requirements.txt**
 
-## 5) Ejecutar Python
-
-Guía oficial: https://code.visualstudio.com/docs/python/run
-
-Formas recomendadas:
-1. Botón **Run Python File in Terminal** (arriba a la derecha)
-2. Clic derecho → **Run > Python File in Terminal**
-3. Selecciona líneas → `Shift+Enter` → **Run Selection/Line...**
-
-VS Code activa automáticamente el intérprete/entorno seleccionado en la terminal al ejecutar.
-
-### 5.1 REPL (modo interactivo)
-- **Native REPL**: `Python: Start Native REPL`
-- **Terminal REPL**: `Python: Start Terminal REPL` o `python` / `python3` en terminal
-
-Referencia: https://code.visualstudio.com/docs/python/run
-
----
-
-## 6) Edición en Python (IntelliSense, navegación, productividad)
-
-Guía oficial: https://code.visualstudio.com/docs/python/editing
-
-Lo clave:
-- **IntelliSense/autocompletado**
-- **Auto-imports** (configurable)
-- Navegación por símbolos, referencias y renombrado (F2)
-
-Nota importante del doc:
-- **Pylance** es el *language server* por defecto para Python y se instala junto al soporte Python (IntelliSense).
-
-Referencia: https://code.visualstudio.com/docs/python/editing
-
----
-
-## 7) Debugging con Python (breakpoints y `launch.json`)
-
-Guía oficial: https://code.visualstudio.com/docs/python/debugging
-
-### 7.1 Primer debug
-- Pon un breakpoint (clic a la izquierda del número de línea)
-- Presiona **F5**
-- Elige “Python File” si te lo pide la primera vez
-
-VS Code puede crear un archivo `launch.json` con configuración base.
-
-Referencia: https://code.visualstudio.com/docs/python/debugging
-
-### 7.2 Debug “mínimo” que usaremos
-- Breakpoints
-- Step Over / Step Into / Step Out
-- Variables / Watch
-- Debug Console
-
----
-
-## 8) Git en VS Code (flujo mínimo)
-
-Guía oficial: https://code.visualstudio.com/docs/sourcecontrol/overview
-
-### 8.1 Prerrequisitos
-- VS Code usa la instalación de Git de tu máquina (recomendado Git 2.0.0+).
-- Configura usuario y email:
-
+Paso 1 — Activar entorno virtual
 ```bash
-git config --global user.name "Tu Nombre"
-git config --global user.email "tu@email.com"
+venv\Scripts\activate
 ```
+Paso 2 — Instalar dependencias
 
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/overview
-
-### 8.2 Primer flujo (staging + commit)
-1) Abre **Source Control**  
-2) Revisa diffs  
-3) Stage (botón `+`)  
-4) Escribe mensaje  
-5) Commit  
-
-VS Code ofrece herramientas visuales (diff editor, graph) para revisar cambios.
-
----
-
-## 9) Repos remotos (GitHub u otro host)
-
-Guía oficial: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
-
-Conceptos:
-- **fetch**: descarga cambios sin mezclar
-- **pull**: fetch + merge
-- **push**: sube tus commits
-- **sync**: combina pull + push (flujo recomendado cuando ya hay remoto)
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
-
-### 9.1 Clonar
-- Command Palette → `Git: Clone`
-- Elige repo y carpeta local
-
-### 9.2 Publicar a GitHub (si el repo era local)
-- Source Control → **Publish to GitHub**
-- Define público/privado
-- Selecciona archivos del commit inicial
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
-
-### 9.3 Agregar remoto (cuando necesitas `upstream`, etc.)
-- Source Control → More Actions (...) → Remotes → Add Remote  
-  o `Git: Add Remote`
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
-
----
-
-
-## 10) Actividad guiada (hands-on): “Hola VS Code + Python + Git”
-
-### Paso A — Crea el proyecto
-1. Crea carpeta `clase_2_vscode`
-2. Ábrela en VS Code (File → Open Folder)
-3. Crea `main.py` con este contenido:
-
-```python
-def saludar(nombre: str) -> str:
-    return f"Hola, {nombre}!"
-
-if __name__ == "__main__":
-    print(saludar("mundo"))
+Ejemplo:
+```bash
+pip install requests
 ```
+Paso 3 — Generar el archivo automáticamente
 
-### Paso B — Crea entorno y selecciona intérprete
-1. Terminal integrada → crea `.venv`
-2. Activa `.venv`
-3. En la barra inferior, selecciona ese intérprete
-
-### Paso C — Ejecuta y prueba modo interactivo
-- Ejecuta con el botón **Run Python File in Terminal**
-- Selecciona solo la función `saludar` y usa `Shift+Enter` (Run Selection)
-
-### Paso D — Debug
-- Pon breakpoint en `print(...)`
-- F5 y observa variables/flujo
-
-### Paso E — Git básico
-- Inicializa repo (`Initialize Repository`) o `git init`
-- Commit
-- Publica/usa remoto (GitHub) si aplica
+pip freeze > requirements.txt
+```bash
+```
+Esto crea el archivo en la raíz del proyecto.
 
 ---
+**¿Qué contiene?**
+
+Ejemplo:
+```bash
+requests==2.31.0
+certifi==2024.2.2
+charset-normalizer==3.3.2
+```
+Incluye dependencias internas también.
+
+---
+**¿Por qué no escribirlo a mano?**
+
+Porque puedes olvidar versiones o dependencias internas.
+
+pip freeze garantiza reproducibilidad.
+
+---
+
+**Paso 5:  ¿Qué es .gitignore y por qué es CRÍTICO?**
+
+.gitignore le dice a Git qué archivos NO debe subir.
+
+Traducción simple:
+
+"Estos archivos son locales. No deben ir al repositorio."
+
+---
+**¿Qué nunca debe subirse?**
+1. venv/
+
+2. Archivos temporales
+
+3. Archivos compilados
+
+4. Configuraciones locales
+
+---
+**PASO A PASO — Crear .gitignore en VS Code**
+
+Paso 1 — Crear archivo
+
+En VS Code:
+
+1. Click derecho en la raíz del proyecto
+
+2. "New File"
+
+3. Escribir:
+```bash
+.gitignore
+```
+(Con punto al inicio)
+
+---
+**Paso 2 — Agregar contenido básico para Python**
+```bash
+# Entorno virtual
+venv/
+
+# Archivos compilados
+__pycache__/
+*.pyc
+
+# Configuración VS Code
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+```
+---
+Guardar.
 
