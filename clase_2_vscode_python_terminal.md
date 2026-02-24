@@ -388,12 +388,65 @@ if __name__ == "__main__":
 ---
 **Ejecutar el proyecto**
 
-Desde la raíz:
+Desde la raíz **...\Clases_pregrado\mini_proyecto>**:
+```bash
+$env:PYTHONPATH="src"
+```
+
 ```bash
 python -m mini_proyecto.main
 ```
 Esto es importante cuando usas estructura con src.
 
+---
+**¿Qué son los archivos .pyc?**
+
+.pyc significa:
+
+Python Compiled
+
+Son versiones compiladas de tus archivos .py.
+
+Python NO ejecuta directamente el texto del archivo.
+
+Primero:
+
+1️⃣ Lee el código .py
+
+2️⃣ Lo compila a bytecode
+
+3️⃣ Guarda ese bytecode en un archivo .pyc
+
+4️⃣ Luego ejecuta ese bytecode
+
+---
+**¿Qué es bytecode?**
+
+No es código máquina (como C).
+Es un código intermedio que ejecuta la máquina virtual de Python.
+
+Flujo interno:
+```bash
+Archivo .py
+   ↓
+Compilación
+   ↓
+Bytecode (.pyc)
+   ↓
+Python Virtual Machine
+   ↓
+Ejecución
+```
+---
+**¿Debo subir los .pyc a GitHub?**
+
+NO.
+
+Por eso en .gitignore ponemos:
+```bash
+__pycache__/
+*.pyc
+```
 ---
 **Modelo mental de la arquitectura**
 ```bash
@@ -430,6 +483,21 @@ api/
 ```
 Y la arquitectura se mantiene ordenada.
 
+---
+
+----
+**Paso 4: ¿Qué es requirements.txt y por qué es obligatorio?**
+
+Es el archivo que guarda las dependencias del proyecto.
+
+Traducción simple:
+
+"Estas son las librerías que mi proyecto necesita para funcionar"
+
+Si otra persona clona tu proyecto, solo debe hacer:
+```bash
+pip install -r requirements.txt
+```
 ---
 
 ### 4.2 Crear un entorno desde VS Code (cuando esté disponible)
