@@ -1,6 +1,6 @@
-# Clase 2 — Configuración de VS Code, Python y Terminal
+# Clase 2 — Configuración de VS Code para usar Python, JAVA y Git (opcional)rminal
 
-> **Objetivo de la clase:** dejar tu entorno listo para programar en **Python** de forma cómoda y profesional: editor configurado, extensiones mínimas, terminal integrada, entornos virtuales, ejecución y depuración, y un flujo básico con Git/GitHub.
+> **Objetivo de la clase:** dejar tu entorno listo para programar en **Python** y **JAVA** de forma cómoda y profesional: editor configurado, extensiones mínimas, terminal integrada, entornos virtuales, ejecución y depuración, y un flujo básico con Git/GitHub.
 
 ---
 
@@ -11,8 +11,7 @@ Al finalizar la clase deberías poder:
 - Abrir una carpeta de proyecto en VS Code (**workspace**).
 - Crear y activar un entorno virtual (`.venv`) y seleccionar el intérprete correcto.
 - Ejecutar un script Python desde VS Code y desde la terminal integrada.
-- Usar IntelliSense/autocompletado y navegación básica.
-- Depurar con breakpoints (F5).
+- Ejecutar código en JAVA
 - Hacer commit con Git y sincronizar con un repositorio remoto (GitHub).
 
 ---
@@ -86,9 +85,6 @@ Referencia: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
 
 ---
 
-
-
-
 ## 3) Python en VS Code (setup + ejecución + edición)
 
 ### 3.1 Quick Start (visión general)
@@ -96,30 +92,111 @@ https://code.visualstudio.com/docs/python/python-quick-start
 
 Qué te interesa hoy:
 - Instalar la extensión Python
+
+1. Descargar el instalador de python: https://www.python.org/downloads/
+2. Descargar la versión standalone de python:
+   
+    <img width="530" height="155" alt="image" src="https://github.com/user-attachments/assets/73833019-5c22-4ae0-b75d-f47fd7b59c58" />
+    
+3. Al instalar marcar la opción **Add python.exe to path**:
+
+<img width="972" height="601" alt="image" src="https://github.com/user-attachments/assets/983bf922-697f-498c-944e-a6f415429650" />
+
+4. Next a todo lo siguiente
+5. Instalar extensiones de python:
+
+ <img width="742" height="921" alt="image" src="https://github.com/user-attachments/assets/dffd3357-1d97-4d33-ac99-e1d7d3d6ab41" /> 
+ 
 - Ejecutar scripts
-- Primer debug (F5)
-- Testing (cuando corresponda)
+  1. Creamos una carpeta de proyectos, por ejemplo: tests_ptyhon
+  2. La abro:
+     
+     <img width="323" height="240" alt="image" src="https://github.com/user-attachments/assets/ea07d14f-f3e0-4dc4-bfe6-50655c697b18" />
 
-### 3.2 Tutorial Python (flujo completo)
-https://code.visualstudio.com/docs/python/python-tutorial
+3. Selecciono la carpeta:
 
-Útil para entender el “camino típico”:
-1) crear proyecto  
-2) crear entorno  
-3) instalar paquetes  
-4) ejecutar  
-5) debug  
+<img width="802" height="396" alt="image" src="https://github.com/user-attachments/assets/a9e2bb8a-00fb-45fe-a178-1cfee52fe32f" />
+
+
+4. Crear un test.py
+
+<img width="332" height="109" alt="image" src="https://github.com/user-attachments/assets/e7af39e1-9462-4360-8f35-bf4e704c5834" />
+
+
+5. Corremo nuestro primer codigo en python:
+
+   <img width="1053" height="679" alt="image" src="https://github.com/user-attachments/assets/98ffb5ee-3297-47a6-8642-ce7336fe3299" />
+
+
+### 3.2 Elementos básicos en la creación de un proyecto (flujo completo)
+
+Los elementos que debe contener un proyecto:
+
+```bash
+mi_proyecto/
+│
+├── venv/
+├── src/
+│   ├── main.py
+│   └── utils.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 ---
 
-## 4) Configurar ambientes (selección de intérprete y `.venv`)
+---
 
-Guía oficial: https://code.visualstudio.com/docs/python/environments
+## 4) Ejemplo de mini proyecto en python paso a paso:
 
-### 4.1 Seleccionar intérprete
-Dos maneras:
-- **Status Bar**: abajo, selecciona la versión de Python mostrada.
-- **Command Palette**: `Python: Select Interpreter`
+### Definimos la estructura del proyecto: 
+
+```bash
+mini_proyecto/
+│
+├── venv/
+├── src/
+│   └── mini_proyecto/
+│       ├── __init__.py
+│       ├── main.py
+│       ├── models/
+│       │   ├── __init__.py
+│       │   └── usuario.py
+│       ├── services/
+│       │   ├── __init__.py
+│       │   └── usuario_service.py
+│       └── utils/
+│           ├── __init__.py
+│           └── calculos.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+**Paso 1**: Crear la carpeta mini_proyecto
+
+---
+**Paso 2**: Crear entorno virtual
+
+Un entorno virtual es:
+
+Una copia aislada del intérprete de Python + su propio espacio para instalar librerías.
+
+Es como crear un “mini Python independiente” dentro de tu proyecto. Esto se hace con el siguiente comando:
+
+```bash
+python -m venv venv
+```
+
+---
+
+
+```bash
+```
 
 La selección se usa para:
 - ejecutar,
