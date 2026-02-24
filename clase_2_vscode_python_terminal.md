@@ -232,6 +232,7 @@ Debe apuntar a:
    Permite:
 
 ✔ Scripts creados en tu máquina
+
 ✔ Scripts firmados digitalmente
 
 ---
@@ -299,7 +300,137 @@ __init__.py
 (Esto convierte la carpeta en paquete Python)
 
 ---
+**models/usuario.py**
+Aquí colocaremos el siguiente código: 
+```bash
+class Usuario:
+    def __init__(self, nombre: str, edad: int):
+        self.nombre = nombre
+        self.edad = edad
 
+    def __str__(self):
+        return f"{self.nombre} ({self.edad} años)"
+```
+
+**¿Qué es esto?**
+
+Un modelo.
+
+Representa una entidad del sistema.
+
+---
+**services/usuario_service.py**
+```bash
+from typing import List
+from mini_proyecto.models.usuario import Usuario
+from mini_proyecto.utils.calculos import promedio
+
+
+class UsuarioService:
+    def __init__(self):
+        self.usuarios: List[Usuario] = []
+
+    def agregar_usuario(self, nombre: str, edad: int):
+        usuario = Usuario(nombre, edad)
+        self.usuarios.append(usuario)
+
+    def listar_usuarios(self):
+        return self.usuarios
+
+    def edad_promedio(self):
+        edades = [u.edad for u in self.usuarios]
+        return promedio(edades)
+```
+**¿Qué hace esta capa?**
+
+Es la lógica del negocio.
+
+No imprime.
+
+No interactúa con usuario.
+
+Solo maneja datos.
+
+---
+**utils/calculos.py**
+```bash
+def promedio(lista):
+    if not lista:
+        return 0
+    return sum(lista) / len(lista)
+```
+**¿Por qué separar utils?**
+
+Porque el cálculo podría reutilizarse en otro lugar.
+
+---
+**main.py**
+```bash
+from mini_proyecto.services.usuario_service import UsuarioService
+
+def main():
+    servicio = UsuarioService()
+
+    servicio.agregar_usuario("Ana", 20)
+    servicio.agregar_usuario("Luis", 25)
+    servicio.agregar_usuario("Carla", 30)
+
+    print("Usuarios registrados:")
+    for usuario in servicio.listar_usuarios():
+        print(usuario)
+
+    print("\nEdad promedio:")
+    print(servicio.edad_promedio())
+
+if __name__ == "__main__":
+    main()
+```
+---
+**Ejecutar el proyecto**
+
+Desde la raíz:
+```bash
+python -m mini_proyecto.main
+```
+Esto es importante cuando usas estructura con src.
+
+---
+**Modelo mental de la arquitectura**
+```bash
+main.py
+   ↓
+UsuarioService (lógica)
+   ↓
+Usuario (modelo)
+   ↓
+calculos.py (utilidad)
+```
+---
+**¿Por qué esta estructura es buena?**
+
+✔ Código modular
+
+✔ Fácil de escalar
+
+✔ Fácil de testear
+
+✔ Fácil de mantener
+
+✔ Profesional
+
+---
+**Cómo escalar este proyecto**
+
+Podrías agregar:
+```bash
+database/
+tests/
+config/
+api/
+```
+Y la arquitectura se mantiene ordenada.
+
+---
 
 ### 4.2 Crear un entorno desde VS Code (cuando esté disponible)
 VS Code puede ayudarte a crear entornos y detectar dependencias.
