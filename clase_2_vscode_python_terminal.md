@@ -621,3 +621,8 @@ Ahora escribes:
 ```python
 2 + 2
 ```
+Para salir del ambiente python:
+```python
+exit()
+```
+---
