@@ -191,17 +191,115 @@ Es como crear un “mini Python independiente” dentro de tu proyecto. Esto se 
 ```bash
 python -m venv venv
 ```
+Luego hay que activarlo: 
+```bash
+venv\Scripts\activate
+```
+
+---
+**Cómo verificar que está activo el ambiente**
+
+En la terminal debería aparecer:
+```bash
+(venv) C:\ruta\mi_proyecto>
+```
+También puedes escribir:
+```bash
+where python
+```
+Debe apuntar a:
+```bash
+...mi_proyecto\venv\Scripts\python.exe
+```
+---
+**IMPORTANTE: qué hacer si no te permite activar el ambiente:**
+1. En la consola de PowerShell ejecuta el siguiente comando:
+
+   ```bash
+      Get-ExecutionPolicy
+   ```
+   
+    Si dice:
+    ```bash
+    Restricted
+    ```
+    Ese es el problema.
+
+   **Cambiar política solo para tu usuario**, ejecuta en el powershell este comando:
+   ```bash
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   ```
+   Permite:
+
+✔ Scripts creados en tu máquina
+✔ Scripts firmados digitalmente
+
+---
+**Cerrar y reabrir PowerShell**
+
+Muy importante.
+---
+**Intentar activar nuevamente**
+```bash
+venv\Scripts\activate
+```
+Ahora debería funcionar.
+
+---
+**Breve explicación de los ambientes (enviroments) en python:** 
+
+Es importante el uso de ambientes porque permite cargar diferentes estructuras de configuración dependiendo de las necesidades de los proyectos.
+
+Para activar el ambiente luego de cargar el proyecto debemos hacer lo siguiente en consola: 
+
+```bash
+venv\Scripts\activate
+```
+Eso activa el ambiente de ese proyecto:
+
+```bash
+1. Se modifica temporalmente el PATH
+
+2. El python que usas pasa a ser el del venv
+
+3. El pip que usas instala dentro del venv
+
+4. La terminal muestra (venv) al inicio
+```
+
+Si no lo activas: 
+
+1. python será el global
+
+2. pip install instalará globalmente
+
+3. **Tu proyecto puede romperse**
+   
+---
+**Pasos para desactivar y activar otro ambiente de otro proyecto:**
+```bash
+deactivate
+cd ../ProyectoB
+python -m venv venv
+venv\Scripts\activate
+```
+---
+**Paso 3:** Crear estructura src
+
+Dentro de proyecto crear la carpeta:
+```bash
+src/
+```
+Y vamos a ir creando la estructura de los archivos dentro src/
+
+Agregar archivo vacío:
+```bash
+__init__.py
+```
+(Esto convierte la carpeta en paquete Python)
 
 ---
 
-
-```bash
-```
-
-La selección se usa para:
-- ejecutar,
-- depurar,
-- IntelliSense y features del lenguaje.
 
 ### 4.2 Crear un entorno desde VS Code (cuando esté disponible)
 VS Code puede ayudarte a crear entornos y detectar dependencias.
