@@ -86,198 +86,12 @@ Referencia: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
 
 ---
 
-## 3) Personalización (para trabajar cómodo sin “romper” el entorno)
 
-Guía oficial: https://code.visualstudio.com/docs/getstarted/personalize-vscode
 
-### 3.1 Settings: User vs Workspace
 
-- **User settings**: aplican a todos tus proyectos.
-- **Workspace settings**: aplican solo al proyecto actual (sobrescriben al User).
+## 3) Python en VS Code (setup + ejecución + edición)
 
-VS Code guarda settings en `settings.json` y se puede editar desde el editor gráfico o directo en JSON.
-
-Referencia: https://code.visualstudio.com/docs/getstarted/personalize-vscode
-
-Ejemplo (settings básicos recomendados para el curso):
-
-```json
-{
-  "editor.formatOnSave": true,
-  "editor.wordWrap": "on",
-  "files.trimTrailingWhitespace": true,
-  "terminal.integrated.defaultProfile.windows": "PowerShell"
-}
-```
-
-> Nota: no hace falta que copies esto tal cual. La idea es que sepas **dónde** y **cómo** se configuran.
-
-### 3.2 Temas (Color Theme)
-- Command Palette → `Preferences: Color Theme`
-- Previsualiza con flechas y confirma con Enter.
-
-Referencia: https://code.visualstudio.com/docs/getstarted/personalize-vscode
-
-### 3.3 Atajos (Keyboard Shortcuts)
-- Abre el editor de atajos:
-  - `Ctrl+K Ctrl+S` (Win/Linux) o `Cmd+K Cmd+S` (macOS)
-- Busca un comando, edítalo y asigna una combinación.
-
-Referencia: https://code.visualstudio.com/docs/getstarted/personalize-vscode
-
-### 3.4 Profiles (perfiles)
-Útil si un día quieres separar “Python/Data” de “Web/JS”, o tener un perfil “clase” vs “trabajo”.
-
-- Puedes crear perfiles **vacíos** o copiando un template.
-- Puedes exportar/importar perfiles (por ejemplo, para compartirlo con estudiantes).
-
-Referencia: https://code.visualstudio.com/docs/configure/profiles
-
-### 3.5 Settings Sync (sincronizar configuración)
-Te permite sincronizar settings, atajos, snippets, extensiones y perfiles entre máquinas.
-
-- Manage (ruedita) → **Backup and Sync Settings...**
-- Inicia sesión con cuenta Microsoft o GitHub
-- Elige qué sincronizar
-
-Referencia: https://code.visualstudio.com/docs/configure/settings-sync
-
----
-
-## 4) Extensiones (las mínimas para Python)
-
-Guía oficial: https://code.visualstudio.com/docs/getstarted/extensions
-
-### 4.1 Instalar/extender VS Code
-- Abre **Extensions**:
-  - `Ctrl+Shift+X` (Win/Linux) o `Cmd+Shift+X` (macOS)
-- Busca y presiona **Install**.
-
-### 4.2 Extensiones recomendadas para este curso (Python)
-Instala al menos:
-- **Python** (`ms-python.python`)
-- **Pylance** (normalmente se instala junto a Python; provee IntelliSense)
-
-> VS Code indica extensiones recomendadas según archivos y workspace.  
-> Para administrar recomendaciones/instalación masiva, revisa:
-> https://code.visualstudio.com/docs/configure/extensions/extension-marketplace
-
-### 4.3 Instalar extensiones por terminal (opcional)
-Si tienes `code` habilitado en PATH:
-
-```bash
-code --install-extension ms-python.python
-```
-
-Referencia: https://code.visualstudio.com/docs/configure/extensions/extension-marketplace
-
-### 4.4 Recomendaciones por proyecto (extensiones.json)
-Para sugerir extensiones a quien abra tu repo:
-
-`.vscode/extensions.json`
-```json
-{
-  "recommendations": [
-    "ms-python.python"
-  ]
-}
-```
-
-Referencia: https://code.visualstudio.com/docs/configure/extensions/extension-marketplace
-
----
-
-## 5) Workspaces (cómo ordenar tu proyecto)
-
-Guía oficial: https://code.visualstudio.com/docs/editing/workspaces/workspaces
-
-### 5.1 ¿Qué es un workspace?
-En VS Code, un **workspace** es el contexto del proyecto abierto: carpetas + settings + (opcional) configuraciones de tasks/launch.
-
-### 5.2 Single-folder vs Multi-root
-- **Single-folder**: abres 1 carpeta.
-  - Settings del proyecto quedan en: `.vscode/settings.json`
-- **Multi-root**: abres varias carpetas en un mismo workspace.
-  - Se guarda en un archivo: `*.code-workspace`
-
-Puntos clave:
-- Los **workspace settings** siempre sobrescriben los **user settings**.
-- En multi-root puedes tener settings por “workspace” y settings por “carpeta”.
-
-Referencia: https://code.visualstudio.com/docs/editing/workspaces/workspaces
-
----
-
-## 6) Terminal integrada en VS Code
-
-### 6.1 Primeros pasos (tutorial)
-https://code.visualstudio.com/docs/terminal/getting-started
-
-Aprenderás a:
-- Abrir/crear terminales.
-- Cambiar de shell (PowerShell / Bash / Zsh, etc.).
-- Trabajar con varias terminales para tareas distintas.
-
-### 6.2 Básicos útiles (features del terminal)
-https://code.visualstudio.com/docs/terminal/basics
-
-Cosas prácticas:
-- **Split terminal** (paneles lado a lado).
-- Copiar/pegar con atajos del sistema.
-- Links detectables (Ctrl/Cmd + click).
-- Abrir terminal en el área del editor o en una ventana nueva.
-
----
-
-## 7) “Terminal basics” para el curso (comandos que vamos a usar)
-
-> Esta sección es un mini “chuletario” para el curso (no es documentación de VS Code).
-
-### 7.1 Navegación y archivos (macOS/Linux o Git Bash)
-```bash
-pwd
-ls
-cd carpeta
-mkdir proyecto
-touch main.py
-```
-
-### 7.2 Navegación y archivos (Windows PowerShell)
-```powershell
-pwd
-ls
-cd carpeta
-mkdir proyecto
-ni main.py
-```
-
-### 7.3 Python + entornos virtuales (recomendado)
-#### Crear entorno
-```bash
-python -m venv .venv
-```
-
-#### Activar
-- macOS/Linux:
-  ```bash
-  source .venv/bin/activate
-  ```
-- Windows (PowerShell):
-  ```powershell
-  .\.venv\Scripts\Activate.ps1
-  ```
-
-#### Instalar dependencias
-```bash
-python -m pip install requests
-python -m pip freeze > requirements.txt
-```
-
----
-
-## 8) Python en VS Code (setup + ejecución + edición)
-
-### 8.1 Quick Start (visión general)
+### 3.1 Quick Start (visión general)
 https://code.visualstudio.com/docs/python/python-quick-start
 
 Qué te interesa hoy:
@@ -286,7 +100,7 @@ Qué te interesa hoy:
 - Primer debug (F5)
 - Testing (cuando corresponda)
 
-### 8.2 Tutorial Python (flujo completo)
+### 3.2 Tutorial Python (flujo completo)
 https://code.visualstudio.com/docs/python/python-tutorial
 
 Útil para entender el “camino típico”:
@@ -298,11 +112,11 @@ https://code.visualstudio.com/docs/python/python-tutorial
 
 ---
 
-## 9) Configurar ambientes (selección de intérprete y `.venv`)
+## 4) Configurar ambientes (selección de intérprete y `.venv`)
 
 Guía oficial: https://code.visualstudio.com/docs/python/environments
 
-### 9.1 Seleccionar intérprete
+### 4.1 Seleccionar intérprete
 Dos maneras:
 - **Status Bar**: abajo, selecciona la versión de Python mostrada.
 - **Command Palette**: `Python: Select Interpreter`
@@ -312,7 +126,7 @@ La selección se usa para:
 - depurar,
 - IntelliSense y features del lenguaje.
 
-### 9.2 Crear un entorno desde VS Code (cuando esté disponible)
+### 4.2 Crear un entorno desde VS Code (cuando esté disponible)
 VS Code puede ayudarte a crear entornos y detectar dependencias.
 
 Pistas útiles del doc:
@@ -321,7 +135,7 @@ Pistas útiles del doc:
 
 Referencia: https://code.visualstudio.com/docs/python/environments
 
-### 9.3 Variables de entorno con `.env`
+### 4.3 Variables de entorno con `.env`
 Puedes inyectar variables a terminales desde un archivo `.env` (útil para llaves/API en desarrollo).
 
 Referencia: https://code.visualstudio.com/docs/python/environments
@@ -334,7 +148,7 @@ ENV=dev
 
 ---
 
-## 10) Ejecutar Python
+## 5) Ejecutar Python
 
 Guía oficial: https://code.visualstudio.com/docs/python/run
 
@@ -345,7 +159,7 @@ Formas recomendadas:
 
 VS Code activa automáticamente el intérprete/entorno seleccionado en la terminal al ejecutar.
 
-### 10.1 REPL (modo interactivo)
+### 5.1 REPL (modo interactivo)
 - **Native REPL**: `Python: Start Native REPL`
 - **Terminal REPL**: `Python: Start Terminal REPL` o `python` / `python3` en terminal
 
@@ -353,7 +167,7 @@ Referencia: https://code.visualstudio.com/docs/python/run
 
 ---
 
-## 11) Edición en Python (IntelliSense, navegación, productividad)
+## 6) Edición en Python (IntelliSense, navegación, productividad)
 
 Guía oficial: https://code.visualstudio.com/docs/python/editing
 
@@ -369,11 +183,11 @@ Referencia: https://code.visualstudio.com/docs/python/editing
 
 ---
 
-## 12) Debugging con Python (breakpoints y `launch.json`)
+## 7) Debugging con Python (breakpoints y `launch.json`)
 
 Guía oficial: https://code.visualstudio.com/docs/python/debugging
 
-### 12.1 Primer debug
+### 7.1 Primer debug
 - Pon un breakpoint (clic a la izquierda del número de línea)
 - Presiona **F5**
 - Elige “Python File” si te lo pide la primera vez
@@ -382,7 +196,7 @@ VS Code puede crear un archivo `launch.json` con configuración base.
 
 Referencia: https://code.visualstudio.com/docs/python/debugging
 
-### 12.2 Debug “mínimo” que usaremos
+### 7.2 Debug “mínimo” que usaremos
 - Breakpoints
 - Step Over / Step Into / Step Out
 - Variables / Watch
@@ -390,11 +204,11 @@ Referencia: https://code.visualstudio.com/docs/python/debugging
 
 ---
 
-## 13) Git en VS Code (flujo mínimo)
+## 8) Git en VS Code (flujo mínimo)
 
 Guía oficial: https://code.visualstudio.com/docs/sourcecontrol/overview
 
-### 13.1 Prerrequisitos
+### 8.1 Prerrequisitos
 - VS Code usa la instalación de Git de tu máquina (recomendado Git 2.0.0+).
 - Configura usuario y email:
 
@@ -405,7 +219,7 @@ git config --global user.email "tu@email.com"
 
 Referencia: https://code.visualstudio.com/docs/sourcecontrol/overview
 
-### 13.2 Primer flujo (staging + commit)
+### 8.2 Primer flujo (staging + commit)
 1) Abre **Source Control**  
 2) Revisa diffs  
 3) Stage (botón `+`)  
@@ -416,7 +230,7 @@ VS Code ofrece herramientas visuales (diff editor, graph) para revisar cambios.
 
 ---
 
-## 14) Repos remotos (GitHub u otro host)
+## 9) Repos remotos (GitHub u otro host)
 
 Guía oficial: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
 
@@ -428,18 +242,18 @@ Conceptos:
 
 Referencia: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
 
-### 14.1 Clonar
+### 9.1 Clonar
 - Command Palette → `Git: Clone`
 - Elige repo y carpeta local
 
-### 14.2 Publicar a GitHub (si el repo era local)
+### 9.2 Publicar a GitHub (si el repo era local)
 - Source Control → **Publish to GitHub**
 - Define público/privado
 - Selecciona archivos del commit inicial
 
 Referencia: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
 
-### 14.3 Agregar remoto (cuando necesitas `upstream`, etc.)
+### 9.3 Agregar remoto (cuando necesitas `upstream`, etc.)
 - Source Control → More Actions (...) → Remotes → Add Remote  
   o `Git: Add Remote`
 
@@ -447,36 +261,8 @@ Referencia: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes
 
 ---
 
-## 15) Colaborar en GitHub desde VS Code (PRs e Issues)
 
-Guía oficial: https://code.visualstudio.com/docs/sourcecontrol/github
-
-VS Code integra GitHub principalmente vía la extensión:
-- **GitHub Pull Requests and Issues**
-
-### 15.1 Setup
-1) Instala la extensión **GitHub Pull Requests and Issues**
-2) Sign in (autenticación en navegador)
-3) Vuelve a VS Code
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/github
-
-### 15.2 Pull Requests (PR)
-- Usa `GitHub Pull Requests: Create Pull Request`
-- Completa título/descr, reviewers, labels, etc.
-- Entra en “Review Mode” para revisar y comentar diffs
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/github
-
-### 15.3 Issues
-- Crear issues desde el panel de Issues
-- Incluso generar issues desde “TODO”/selección
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/github
-
----
-
-## 16) Actividad guiada (hands-on): “Hola VS Code + Python + Git”
+## 10) Actividad guiada (hands-on): “Hola VS Code + Python + Git”
 
 ### Paso A — Crea el proyecto
 1. Crea carpeta `clase_2_vscode`
@@ -511,46 +297,3 @@ if __name__ == "__main__":
 
 ---
 
-## 17) Troubleshooting (fallas típicas y cómo atacarlas)
-
-### “`code` no se reconoce como comando”
-- Windows: reinicia la terminal después de instalar VS Code (PATH se actualiza).
-- macOS: usa “Shell Command: Install 'code' command in PATH”.
-
-Referencias:
-- https://code.visualstudio.com/docs/setup/windows
-- https://code.visualstudio.com/docs/setup/mac
-
-### “VS Code no encuentra mi Python / el intérprete es incorrecto”
-- Selecciona intérprete: `Python: Select Interpreter`.
-- Revisa que el entorno esté activado y exista `.venv`.
-
-Referencia: https://code.visualstudio.com/docs/python/environments
-
-### “Git no aparece en Source Control”
-- Instala Git y verifica `git --version`.
-- VS Code usa el Git del sistema.
-
-Referencia: https://code.visualstudio.com/docs/sourcecontrol/overview
-
----
-
-## 18) Lecturas y referencias (oficiales)
-
-1. Instalar VS Code (descarga): https://code.visualstudio.com/download  
-2. Get started / tutorial: https://code.visualstudio.com/docs/getstarted/getting-started  
-3. Personalización: https://code.visualstudio.com/docs/getstarted/personalize-vscode  
-4. Extensiones: https://code.visualstudio.com/docs/getstarted/extensions  
-5. Tips & tricks: https://code.visualstudio.com/docs/getstarted/tips-and-tricks  
-6. Workspaces: https://code.visualstudio.com/docs/editing/workspaces/workspaces  
-7. Git en VS Code: https://code.visualstudio.com/docs/sourcecontrol/overview  
-8. Repos y remotos: https://code.visualstudio.com/docs/sourcecontrol/repos-remotes  
-9. GitHub (PRs/Issues): https://code.visualstudio.com/docs/sourcecontrol/github  
-10. Terminal (getting started): https://code.visualstudio.com/docs/terminal/getting-started  
-11. Terminal (basics): https://code.visualstudio.com/docs/terminal/basics  
-12. Python quick start: https://code.visualstudio.com/docs/python/python-quick-start  
-13. Tutorial Python: https://code.visualstudio.com/docs/python/python-tutorial  
-14. Run Python + REPL: https://code.visualstudio.com/docs/python/run  
-15. Python editing: https://code.visualstudio.com/docs/python/editing  
-16. Python debugging: https://code.visualstudio.com/docs/python/debugging  
-17. Python environments: https://code.visualstudio.com/docs/python/environments  
