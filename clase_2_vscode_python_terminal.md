@@ -626,4 +626,22 @@ Para salir del ambiente python:
 ```python
 exit()
 ```
----
+## Git en VS code
+1. Inicializar el repositorio:
+
+<img width="540" height="639" alt="image" src="https://github.com/user-attachments/assets/f262c490-aa46-467b-ac49-1d68980e3b23" />
+
+2. Al hacer commit puede dar este error de no haber configurado el nombre y el email, para configurar hacer:
+```bash
+   git config --global user.name "Tu Nombre Completo"
+   git config --global user.email "tu_email@gmail.com"
+```
+
+3. Testea que todo quedó bien:
+```bash
+   git config --list
+```
+
+5. 
+
+Luego, eso nos da la posibilidad de hacer nuestro primer commit.
