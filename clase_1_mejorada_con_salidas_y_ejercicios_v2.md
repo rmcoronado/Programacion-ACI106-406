@@ -39,7 +39,7 @@ Al terminar esta clase podrás:
   - `ls`, `cd`, `pwd`, `mkdir`
 - Tener acceso a internet para instalar Git y crear cuenta en GitHub.
 
-> [!TIP]
+> **`TIP`**
 > Si terminal te asusta, no pasa nada: en esta clase la usas como un “control remoto” para Git.
 
 ---
@@ -139,7 +139,7 @@ Git te permite guardar “fotos” del proyecto (**commits**) cuando tú decides
 - **Comparar** versiones y ver qué cambió.
 - **Colaborar** con otras personas sin pisarse (y resolver conflictos cuando pasa).
 
-> [!NOTE]
+> **`NOTE`**
 > Git sirve incluso si trabajas sola: el “yo del futuro” te lo agradece.
 
 ---
@@ -214,7 +214,7 @@ flowchart LR
   SA -->|git commit| REPO["Repository (.git) (historial)"]
 ```
 
-> [!TIP]
+> **`TIP`**
 > Piensa en el staging como una “bandeja” donde ordenas qué entra al commit.
 
 <a id="25-commits-hashes-y-head"></a>
@@ -359,7 +359,7 @@ Deberías ver algo como: `git version 2.x.x`
 3. Email + contraseña + username
 4. Verificar correo
 
-> [!TIP]
+> **`TIP`**
 > Usa un username profesional (lo vas a mostrar en CV/LinkedIn/portafolio).
 
 <a id="34-configuracion-inicial-de-git"></a>
@@ -612,7 +612,7 @@ mi_proyecto/
   archivo2.py
 ```
 
-> [!TIP]
+> **`TIP`**
 > Siempre ejecuta comandos Git **dentro** de la carpeta del proyecto.
 
 1) Entra a la carpeta:
@@ -734,7 +734,7 @@ $ git commit -m "Agrega archivos iniciales"
 </details>
 
 
-> [!TIP]
+> **`TIP`**
 > Si quieres ver el *diff* completo antes de confirmar el commit, usa:
 >
 > ```bash
@@ -917,7 +917,7 @@ origin  git@github.com:USERNAME/REPO.git (push)
 </details>
 
 
-> [!NOTE]
+> **`NOTE`**
 > `origin` es solo un nombre (convención). Podría llamarse distinto, pero **no** conviene.
 
 Asegurar rama principal:
@@ -1081,7 +1081,7 @@ sequenceDiagram
   R-->>L: cambios integrados en tu rama
 ```
 
-> [!TIP]
+> **`TIP`**
 > Antes de subir: **pull** (idealmente con rebase) y luego **push**.
 
 Configurar rebase por defecto:
