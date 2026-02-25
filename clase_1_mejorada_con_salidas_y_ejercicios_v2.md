@@ -210,8 +210,8 @@ Git se entiende perfecto si memorizas este flujo:
 
 ```mermaid
 flowchart LR
-  WD["Working Directory\n(archivos reales)"] -->|git add| SA["Staging Area\n(preparo el commit)"]
-  SA -->|git commit| REPO["Repository (.git)\n(historial)"]
+  WD["Working Directory (archivos reales)"] -->|git add| SA["Staging Area (preparo el commit)"]
+  SA -->|git commit| REPO["Repository (.git) (historial)"]
 ```
 
 > [!TIP]
