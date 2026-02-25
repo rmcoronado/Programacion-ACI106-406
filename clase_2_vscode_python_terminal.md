@@ -1,162 +1,11 @@
-# Clase 2 — Configuración de VS Code para usar Python, JAVA y Git (opcional)rminal
-
-> **Objetivo de la clase:** dejar tu entorno listo para programar en **Python** y **JAVA** de forma cómoda y profesional: editor configurado, extensiones mínimas, terminal integrada, entornos virtuales, ejecución y depuración, y un flujo básico con Git/GitHub.
-
----
-
-## 0) Checklist rápido (lo que debe quedar funcionando hoy)
-
-Al finalizar la clase deberías poder:
-
-- Abrir una carpeta de proyecto en VS Code (**workspace**).
-- Crear y activar un entorno virtual (`.venv`) y seleccionar el intérprete correcto.
-- Ejecutar un script Python desde VS Code y desde la terminal integrada.
-- Ejecutar código en JAVA
-- Hacer commit con Git y sincronizar con un repositorio remoto (GitHub).
-
----
-
-## 1) Instalar Visual Studio Code
-
-### 1.1 Descarga (Windows / macOS / Linux)
-
-- Página oficial de descarga: https://code.visualstudio.com/download
-
-**Recomendación general:** usa instaladores oficiales (User Installer en Windows, `.dmg` en macOS, `.deb`/`.rpm`/Snap en Linux) para tener actualizaciones y “buenas rutas” por defecto.
-
-### 1.2 Instalación por sistema operativo (resumen práctico)
-
-> Guías oficiales:  
-> - Windows: https://code.visualstudio.com/docs/setup/windows  
-> - macOS: https://code.visualstudio.com/docs/setup/mac  
-> - Linux: https://code.visualstudio.com/docs/setup/linux  
-
-#### Windows (recomendado: *User Installer*)
-1. Descarga el instalador para Windows.
-2. Ejecuta `VSCodeUserSetup-<version>.exe`.
-3. Después de instalar, reinicia la terminal si quieres usar el comando `code`.
-
-✅ **Tip importante:** el instalador agrega VS Code al `%PATH%` para poder usar `code .` (abre VS Code en esa carpeta).  
-Referencia: https://code.visualstudio.com/docs/setup/windows. Para verificar, abrán git bash y escriban: 
-```bash
-code
-```
-Esto debería abrir automaticamente VS code.
-
-#### macOS
-1. Descarga el `.dmg`.
-2. Arrastra `Visual Studio Code.app` a **Applications**.
-3. Para habilitar `code` en la terminal:
-   - Abre VS Code → Command Palette → ejecuta: **Shell Command: Install 'code' command in PATH**.
-
-Referencia: https://code.visualstudio.com/docs/setup/mac
-
-#### Linux (varía según distro)
-- **Debian/Ubuntu (.deb)**:
-  ```bash
-  sudo apt install ./<file>.deb
-  ```
-- **Snap**:
-  ```bash
-  sudo snap install --classic code
-  ```
-- **RPM (Fedora/RHEL/SUSE)**:
-  ```bash
-  sudo dnf install <file>.rpm
-  ```
-
-Referencia: https://code.visualstudio.com/docs/setup/linux
-
----
-
-## 2) Tour: “Get started” y lo mínimo del interfaz
-
-Tutorial oficial (muy recomendado): https://code.visualstudio.com/docs/getstarted/getting-started
-
-### 2.1 Lo esencial del UI
-- **Activity Bar**: iconos de Explorer, Search, Source Control, Run and Debug, Extensions.
-- **Explorer**: archivos/carpetas del proyecto.
-- **Editor**: donde codificas.
-- **Panel**: Terminal / Output / Debug Console / Problems.
-- **Command Palette** (el “centro de mando”):
-  - Atajo: `Ctrl+Shift+P` (Win/Linux) o `Cmd+Shift+P` (macOS).
-
-Referencia: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-
----
-
-## 3) Python en VS Code (setup + ejecución + edición)
-
-### 3.1 Quick Start (visión general)
-https://code.visualstudio.com/docs/python/python-quick-start
-
-Qué te interesa hoy:
-- Instalar la extensión Python
-
-1. Descargar el instalador de python: https://www.python.org/downloads/
-2. Descargar la versión standalone de python:
-   
-    <img width="530" height="155" alt="image" src="https://github.com/user-attachments/assets/73833019-5c22-4ae0-b75d-f47fd7b59c58" />
-    
-3. Al instalar marcar la opción **Add python.exe to path**:
-
-<img width="972" height="601" alt="image" src="https://github.com/user-attachments/assets/983bf922-697f-498c-944e-a6f415429650" />
-
-4. Next a todo lo siguiente
-5. Instalar extensiones de python:
-
- <img width="742" height="921" alt="image" src="https://github.com/user-attachments/assets/dffd3357-1d97-4d33-ac99-e1d7d3d6ab41" /> 
- 
-- Ejecutar scripts
-  1. Creamos una carpeta de proyectos, por ejemplo: tests_ptyhon
-  2. La abro:
-     
-     <img width="323" height="240" alt="image" src="https://github.com/user-attachments/assets/ea07d14f-f3e0-4dc4-bfe6-50655c697b18" />
-
-3. Selecciono la carpeta:
-
-<img width="802" height="396" alt="image" src="https://github.com/user-attachments/assets/a9e2bb8a-00fb-45fe-a178-1cfee52fe32f" />
-
-
-4. Crear un test.py
-
-<img width="332" height="109" alt="image" src="https://github.com/user-attachments/assets/e7af39e1-9462-4360-8f35-bf4e704c5834" />
-
-
-5. Corremo nuestro primer codigo en python:
-
-   <img width="1053" height="679" alt="image" src="https://github.com/user-attachments/assets/98ffb5ee-3297-47a6-8642-ce7336fe3299" />
-
-
-### 3.2 Elementos básicos en la creación de un proyecto (flujo completo)
-
-Los elementos que debe contener un proyecto:
-
-```bash
-mi_proyecto/
+🚀 Clase 2 — Configuración Profesional de tu Entorno de Desarrollo🎯 Objetivo de la clase: Dejar tu computador listo para programar en Python y JAVA de forma cómoda y profesional. Configuraremos tu editor (VS Code), instalaremos extensiones mínimas, aprenderemos a usar la terminal integrada, gestionaremos entornos virtuales y daremos nuestros primeros pasos con Git y GitHub.📑 Índice de ContenidosEl Editor: Instalar Visual Studio CodeTour Rápido: Conociendo VS CodeEcosistema Python: Configuración y Ejecución3.1 Instalación y Extensiones3.2 Tu Primer Script3.3 Entornos Virtuales (¡Muy Importante!)Arquitectura de un Proyecto: Mini Proyecto Paso a Paso4.1 Estructura del Proyecto4.2 Construyendo el CódigoBuenas Prácticas: Dependencias e Ignorados5.1 El archivo requirements.txt5.2 El archivo .gitignoreCápsula Teórica: Bytecode y REPLControl de Versiones: Git en VS CodeEcosistema Java: Hola Mundo✅ Checklist Rápido (Lo que lograrás hoy)Al finalizar la clase, serás capaz de:[x] Abrir una carpeta de proyecto en VS Code (workspace).[x] Crear y activar un entorno virtual (.venv) seleccionando el intérprete correcto.[x] Ejecutar un script Python desde el editor y la terminal integrada.[x] Ejecutar tu primer código en JAVA.[x] Hacer un commit con Git para guardar el historial de tus cambios.1. El Editor: Instalar Visual Studio Code1.1 Descarga (Windows / macOS / Linux)📥 Página oficial: https://code.visualstudio.com/download💡 Recomendación general: Usa instaladores oficiales (User Installer en Windows, .dmg en macOS, .deb/.rpm/Snap en Linux) para tener actualizaciones y "buenas rutas" por defecto.1.2 Instalación por Sistema Operativo<details><summary><strong>🪟 Windows (Recomendado: <em>User Installer</em>)</strong></summary>Descarga el instalador para Windows.Ejecuta VSCodeUserSetup-<version>.exe.¡Siguiente a todo! Asegúrate de marcar las opciones para agregar al PATH.Después de instalar, reinicia la terminal.Tip importante: El instalador agrega VS Code a tus variables de entorno para poder usar el comando code . (esto abre VS Code directamente en la carpeta donde estás).Para verificarlo, abre Git Bash o tu terminal y escribe:code
+¡Esto debería abrir automáticamente VS Code!</details><details>
+<summary><strong>🍎 macOS</strong></summary>Descarga el .dmg.Arrastra Visual Studio Code.app a la carpeta de Aplicaciones.Para habilitar el comando code en la terminal:Abre VS Code.Presiona Cmd+Shift+P para abrir la Command Palette.Ejecuta: Shell Command: Install 'code' command in PATH.</details><details><summary><strong>🐧 Linux (varía según distro)</strong></summary>Debian/Ubuntu (.deb): sudo apt install ./<file>.debSnap: sudo snap install --classic codeRPM (Fedora/RHEL/SUSE): sudo dnf install <file>.rpm</details>2. Tour Rápido: Conociendo VS CodeAntes de programar, es crucial conocer nuestra herramienta de trabajo.🗂️ Activity Bar (Barra lateral izquierda): Iconos de Explorer (Tus archivos), Search (Buscar en el código), Source Control (Git), Run and Debug, y Extensions.📂 Explorer: Donde ves los archivos y carpetas de tu proyecto.📝 Editor: El espacio central donde escribes tu código.💻 Panel Inferior: Aquí viven la Terminal, el Output, Debug Console y los Problemas del código.🚀 Command Palette (El "centro de mando"):Atajo: Ctrl+Shift+P (Win/Linux) o Cmd+Shift+P (macOS). ¡Úsalo para ejecutar cualquier acción en el editor!3. Ecosistema Python: Configuración y Ejecución3.1 Instalación y ExtensionesDescarga el instalador desde la página oficial de Python.Busca la versión standalone correspondiente a tu sistema:<img width="530" height="155" alt="image" src="https://github.com/user-attachments/assets/73833019-5c22-4ae0-b75d-f47fd7b59c58" />⚠️ ¡PASO CRÍTICO EN WINDOWS! Al abrir el instalador, marca la casilla "Add python.exe to PATH" antes de darle a Install Now.<img width="972" height="601" alt="image" src="https://github.com/user-attachments/assets/983bf922-697f-498c-944e-a6f415429650" />Siguiente a todo.En VS Code, ve al panel de Extensiones e instala las oficiales de Python:<img width="742" height="921" alt="image" src="https://github.com/user-attachments/assets/dffd3357-1d97-4d33-ac99-e1d7d3d6ab41" />3.2 Tu Primer ScriptCrea una carpeta para tus proyectos (ej: tests_python).Ábrela en VS Code desde File > Open Folder:<img width="323" height="240" alt="image" src="https://github.com/user-attachments/assets/ea07d14f-f3e0-4dc4-bfe6-50655c697b18" /><img width="802" height="396" alt="image" src="https://github.com/user-attachments/assets/a9e2bb8a-00fb-45fe-a178-1cfee52fe32f" />Crea un archivo llamado test.py:<img width="332" height="109" alt="image" src="https://github.com/user-attachments/assets/e7af39e1-9462-4360-8f35-bf4e704c5834" />¡Escribe un print y córrelo usando el botón de "Play" arriba a la derecha!<img width="1053" height="679" alt="image" src="https://github.com/user-attachments/assets/98ffb5ee-3297-47a6-8642-ce7336fe3299" />3.3 Entornos Virtuales (¡Muy Importante!)¿Qué es un entorno virtual (venv)?Es una copia aislada del intérprete de Python más su propio espacio para instalar librerías. Es como crear un "mini Python independiente" solo para un proyecto, evitando que los proyectos se mezclen y rompan entre sí.Paso 1: Crear el entorno (en la terminal de VS Code):python -m venv venv
+Paso 2: Activarlo:venv\Scripts\activate
+Verificación: Si funcionó, verás (venv) al inicio de tu línea de comandos en la terminal.🚨 ERROR COMÚN EN WINDOWS: Si te sale un error rojo sobre ExecutionPolicy, haz lo siguiente:Abre Windows PowerShell como administrador y ejecuta: Get-ExecutionPolicySi dice Restricted, ejecuta: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSignedCierra la terminal, ábrela de nuevo y vuelve a intentar activar el entorno.¿Cómo salir de un entorno?Simplemente escribe deactivate en la consola.4. Arquitectura de un Proyecto: Mini Proyecto Paso a PasoPara programar como profesionales, no usamos un solo archivo gigante. Dividimos las responsabilidades.4.1 Estructura del ProyectoVamos a construir la siguiente estructura. Crea una carpeta mini_proyecto e inicializa tu entorno virtual en ella.mini_proyecto/
 │
-├── venv/
-├── src/
-│   ├── main.py
-│   └── utils.py
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
----
-
----
-
-## 4) Ejemplo de mini proyecto en python paso a paso:
-
-### Definimos la estructura del proyecto: 
-
-```bash
-mini_proyecto/
-│
-├── venv/
-├── src/
+├── venv/                 # <-- Tu entorno virtual (ya creado)
+├── src/                  # <-- Código fuente
 │   └── mini_proyecto/
 │       ├── __init__.py
 │       ├── main.py
@@ -173,158 +22,20 @@ mini_proyecto/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-```
-
----
-
-**Paso 1**: Crear la carpeta mini_proyecto
-
----
-**Paso 2**: Crear entorno virtual
-
-Un entorno virtual es:
-
-Una copia aislada del intérprete de Python + su propio espacio para instalar librerías.
-
-Es como crear un “mini Python independiente” dentro de tu proyecto. Esto se hace con el siguiente comando:
-
-```bash
-python -m venv venv
-```
-Luego hay que activarlo: 
-```bash
-venv\Scripts\activate
-```
-
----
-**Cómo verificar que está activo el ambiente**
-
-En la terminal debería aparecer:
-```bash
-(venv) C:\ruta\mi_proyecto>
-```
-También puedes escribir:
-```bash
-where python
-```
-Debe apuntar a:
-```bash
-...mi_proyecto\venv\Scripts\python.exe
-```
----
-**IMPORTANTE: qué hacer si no te permite activar el ambiente:**
-1. En la consola de PowerShell ejecuta el siguiente comando:
-
-   ```bash
-      Get-ExecutionPolicy
-   ```
-   
-    Si dice:
-    ```bash
-    Restricted
-    ```
-    Ese es el problema.
-
-   **Cambiar política solo para tu usuario**, ejecuta en el powershell este comando:
-   ```bash
-   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-   ```
-   Permite:
-
-✔ Scripts creados en tu máquina
-
-✔ Scripts firmados digitalmente
-
----
-**Cerrar y reabrir PowerShell**
-
-Muy importante.
----
-**Intentar activar nuevamente**
-```bash
-venv\Scripts\activate
-```
-Ahora debería funcionar.
-
----
-**Breve explicación de los ambientes (enviroments) en python:** 
-
-Es importante el uso de ambientes porque permite cargar diferentes estructuras de configuración dependiendo de las necesidades de los proyectos.
-
-Para activar el ambiente luego de cargar el proyecto debemos hacer lo siguiente en consola: 
-
-```bash
-venv\Scripts\activate
-```
-Eso activa el ambiente de ese proyecto:
-
-```bash
-1. Se modifica temporalmente el PATH
-
-2. El python que usas pasa a ser el del venv
-
-3. El pip que usas instala dentro del venv
-
-4. La terminal muestra (venv) al inicio
-```
-
-Si no lo activas: 
-
-1. python será el global
-
-2. pip install instalará globalmente
-
-3. **Tu proyecto puede romperse**
-   
----
-**Pasos para desactivar y activar otro ambiente de otro proyecto:**
-```bash
-deactivate
-cd ../ProyectoB
-python -m venv venv
-venv\Scripts\activate
-```
----
-**Paso 3:** Crear estructura src
-
-Dentro de proyecto crear la carpeta:
-```bash
-src/
-```
-Y vamos a ir creando la estructura de los archivos dentro src/
-
-Agregar archivo vacío:
-```bash
-__init__.py
-```
-(Esto convierte la carpeta en paquete Python)
-
----
-**models/usuario.py**
-Aquí colocaremos el siguiente código: 
-```bash
-class Usuario:
+(Nota: El archivo __init__.py puede estar vacío, sirve para que Python reconozca la carpeta como un paquete importable).4.2 Construyendo el CódigoCrea los siguientes archivos dentro de la estructura src/:1️⃣ El Modelo: models/usuario.pyRepresenta una entidad del sistema (un "molde" para los datos).class Usuario:
     def __init__(self, nombre: str, edad: int):
         self.nombre = nombre
         self.edad = edad
 
     def __str__(self):
         return f"{self.nombre} ({self.edad} años)"
-```
-
-**¿Qué es esto?**
-
-Un modelo.
-
-Representa una entidad del sistema.
-
----
-**services/usuario_service.py**
-```bash
-from typing import List
+2️⃣ La Utilidad: utils/calculos.pyFunciones matemáticas o genéricas separadas para poder reutilizarlas.def promedio(lista):
+    if not lista:
+        return 0
+    return sum(lista) / len(lista)
+3️⃣ El Servicio (Lógica de negocio): services/usuario_service.pyManeja los datos, no imprime en pantalla ni interactúa con el usuario directamente.from typing import List
 from mini_proyecto.models.usuario import Usuario
 from mini_proyecto.utils.calculos import promedio
-
 
 class UsuarioService:
     def __init__(self):
@@ -340,33 +51,7 @@ class UsuarioService:
     def edad_promedio(self):
         edades = [u.edad for u in self.usuarios]
         return promedio(edades)
-```
-**¿Qué hace esta capa?**
-
-Es la lógica del negocio.
-
-No imprime.
-
-No interactúa con usuario.
-
-Solo maneja datos.
-
----
-**utils/calculos.py**
-```bash
-def promedio(lista):
-    if not lista:
-        return 0
-    return sum(lista) / len(lista)
-```
-**¿Por qué separar utils?**
-
-Porque el cálculo podría reutilizarse en otro lugar.
-
----
-**main.py**
-```bash
-from mini_proyecto.services.usuario_service import UsuarioService
+4️⃣ El Punto de Entrada: main.pyEs el archivo principal que une todo y arranca el programa.from mini_proyecto.services.usuario_service import UsuarioService
 
 def main():
     servicio = UsuarioService()
@@ -384,308 +69,30 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
----
-**Ejecutar el proyecto**
-
-Desde la raíz **...\Clases_pregrado\mini_proyecto>**:
-```bash
-$env:PYTHONPATH="src"
-```
-
-```bash
+🚀 Ejecutar el proyecto:Desde la raíz de la carpeta (no desde src), dile a Python dónde está tu código fuente y ejecuta el módulo:$env:PYTHONPATH="src"
 python -m mini_proyecto.main
-```
-Esto es importante cuando usas estructura con src.
-
----
-**¿Qué son los archivos .pyc?**
-
-.pyc significa:
-
-Python Compiled
-
-Son versiones compiladas de tus archivos .py.
-
-Python NO ejecuta directamente el texto del archivo.
-
-Primero:
-
-1️⃣ Lee el código .py
-
-2️⃣ Lo compila a bytecode
-
-3️⃣ Guarda ese bytecode en un archivo .pyc
-
-4️⃣ Luego ejecuta ese bytecode
-
----
-**¿Qué es bytecode?**
-
-No es código máquina (como C).
-Es un código intermedio que ejecuta la máquina virtual de Python.
-
-Flujo interno:
-```bash
-Archivo .py
-   ↓
-Compilación
-   ↓
-Bytecode (.pyc)
-   ↓
-Python Virtual Machine
-   ↓
-Ejecución
-```
----
-**¿Debo subir los .pyc a GitHub?**
-
-NO.
-
-Por eso en .gitignore ponemos:
-```bash
-__pycache__/
-*.pyc
-```
----
-**Modelo mental de la arquitectura**
-```bash
-main.py
-   ↓
-UsuarioService (lógica)
-   ↓
-Usuario (modelo)
-   ↓
-calculos.py (utilidad)
-```
----
-**¿Por qué esta estructura es buena?**
-
-✔ Código modular
-
-✔ Fácil de escalar
-
-✔ Fácil de testear
-
-✔ Fácil de mantener
-
-✔ Profesional
-
----
-**Cómo escalar este proyecto**
-
-Podrías agregar:
-```bash
-database/
-tests/
-config/
-api/
-```
-Y la arquitectura se mantiene ordenada.
-
----
-
-----
-**Paso 4: ¿Qué es requirements.txt y por qué es obligatorio?**
-
-Es el archivo que guarda las dependencias del proyecto.
-
-Traducción simple:
-
-"Estas son las librerías que mi proyecto necesita para funcionar"
-
-Si otra persona clona tu proyecto, solo debe hacer:
-```bash
-pip install -r requirements.txt
-```
-Y tendrá exactamente las mismas versiones.
-
----
-**PASO A PASO — Crear requirements.txt**
-
-Paso 1 — Activar entorno virtual
-```bash
-venv\Scripts\activate
-```
-Paso 2 — Instalar dependencias
-
-Ejemplo:
-```bash
-pip install requests
-```
-Paso 3 — Generar el archivo automáticamente
-
-
-```bash
-pip freeze > requirements.txt
-```
-Esto crea el archivo en la raíz del proyecto.
-
----
-**¿Qué contiene?**
-
-Ejemplo:
-```bash
-requests==2.31.0
-certifi==2024.2.2
-charset-normalizer==3.3.2
-```
-Incluye dependencias internas también.
-
----
-**¿Por qué no escribirlo a mano?**
-
-Porque puedes olvidar versiones o dependencias internas.
-
-pip freeze garantiza reproducibilidad.
-
----
-
-**Paso 5:  ¿Qué es .gitignore y por qué es CRÍTICO?**
-
-.gitignore le dice a Git qué archivos NO debe subir.
-
-Traducción simple:
-
-"Estos archivos son locales. No deben ir al repositorio."
-
----
-**¿Qué nunca debe subirse?**
-1. venv/
-
-2. Archivos temporales
-
-3. Archivos compilados
-
-4. Configuraciones locales
-
----
-**PASO A PASO — Crear .gitignore en VS Code**
-
-Paso 1 — Crear archivo
-
-En VS Code:
-
-1. Click derecho en la raíz del proyecto
-
-2. "New File"
-
-3. Escribir:
-```bash
-.gitignore
-```
-(Con punto al inicio)
-
----
-**Paso 2 — Agregar contenido básico para Python**
-```bash
-# Entorno virtual
+💡 ¿Por qué esta estructura es buena? Porque es modular, fácil de escalar, de testear y muy profesional. Si el proyecto crece, fácilmente agregas carpetas como database/ o api/ sin hacer un desastre.5. Buenas Prácticas: Dependencias e Ignorados5.1 El archivo requirements.txtEs el "inventario" de librerías de tu proyecto. Si le pasas el código a un compañero, él sabrá qué instalar.Pasos para generarlo:Asegúrate de tener el entorno virtual activado.Instala alguna librería (ej: pip install requests).Congela y exporta la lista:<!-- end list -->pip freeze > requirements.txt
+Si otra persona recibe tu proyecto, solo deberá ejecutar: pip install -r requirements.txt.5.2 El archivo .gitignoreEs un archivo de texto CRÍTICO que le dice a Git qué archivos NO debe subir a GitHub (como entornos virtuales, contraseñas o archivos temporales).Crea un archivo llamado .gitignore en la raíz de tu proyecto con esto:# Entorno virtual (¡NUNCA SE SUBE!)
 venv/
 
 # Archivos compilados
 __pycache__/
 *.pyc
 
-# Configuración VS Code
+# Configuración de VS Code
 .vscode/
 
 # Archivos del sistema
 .DS_Store
 Thumbs.db
-```
-Guardar.
-
-----
-**¿Qué es REPL?**
-
-REPL significa:
-
-Read
-Eval
-Print
-Loop
-
----
-Ejemplo simple
-
-Si abres una terminal y escribes:
-```bash
-python
-```
-Verás algo así:
-```bash
->>>
-```
-Ese >>> indica que estás dentro del REPL.
-
-Ahora escribes:
-```python
-2 + 2
-```
-Para salir del ambiente python:
-```python
-exit()
-```
-## Git en VS code
-1. Inicializar el repositorio:
-
-<img width="540" height="639" alt="image" src="https://github.com/user-attachments/assets/f262c490-aa46-467b-ac49-1d68980e3b23" />
-
-2. Al hacer commit puede dar este error de no haber configurado el nombre y el email, para configurar hacer:
-```bash
-   git config --global user.name "Tu Nombre Completo"
-   git config --global user.email "tu_email@gmail.com"
-```
-
-3. Testea que todo quedó bien:
-```bash
-   git config --list
-```
-
-4. Luego, eso nos da la posibilidad de hacer nuestro primer commit.
-
-   ----
-
-
-   ## Instalación de JAVA
-
-   Para instalar JAVA en VS Code, haremos los siguientes pasos:
-
-   **Paso 1:** Abrir VS Code y su marketplace para instalar las extensiones necesarias de Java
-
-   <img width="831" height="369" alt="image" src="https://github.com/user-attachments/assets/c9f66193-762e-445b-a432-90a1df4740c2" />
-
-  **Paso 2:** Vamos a la pestaña de help de VS code y seleccionamos welcome y luego la opción de instalar JDK.
-
-  <img width="896" height="452" alt="image" src="https://github.com/user-attachments/assets/9a36b904-5c62-476b-b475-68d7be44be62" />
-
-  **Paso 3:** instalar el JDK siguiendo los pasos que se muestran abajo.
-
-  <img width="921" height="429" alt="image" src="https://github.com/user-attachments/assets/93d97ac8-690e-46b8-93f1-27fcf710eab6" />
-
-  ### HOLA MUNDO JAVA
-
-  Pasos para crear nuestor hola mundo en Java:
-
-  1. Crear una carpeta, por ejemplo: test_java
-  2. Crear un archivo llamado holamundo.java
-  3. Autocompletando pueden llegar a diseñar su primera clase (elemento fundamental en programación orientada a objetos (POO), el cual veremos a futuro en profundidad) holamundo:
-
-```java
-public class holamundo {
+6. Cápsula Teórica: Bytecode y REPL<details><summary><strong>🧠 ¿Qué son los archivos .pyc y el Bytecode?</strong></summary>Python no ejecuta el texto que tú escribes.Lee tu código .pyLo compila a un código intermedio llamado Bytecode.Guarda ese resultado en un archivo .pyc (dentro de la carpeta __pycache__).La máquina virtual de Python ejecuta ese .pyc.Es por esto que JAMÁS subimos los .pyc a GitHub (se regeneran solos).</details><details><summary><strong>🔄 ¿Qué es el REPL?</strong></summary>REPL significa: Read, Eval, Print, Loop.Si escribes python en tu terminal sin un archivo, entras a un modo interactivo:&gt;&gt;&gt; 2 + 2
+4
+Para salir, simplemente escribe exit().</details>7. Control de Versiones: Git en VS CodeInicializa el repositorio desde el icono de Source Control en la barra lateral:<img width="540" height="639" alt="image" src="https://github.com/user-attachments/assets/f262c490-aa46-467b-ac49-1d68980e3b23" />Error común: Al hacer el primer commit te puede pedir que te identifiques. Abre la terminal y configura tus datos:<!-- end list -->git config --global user.name "Tu Nombre Completo"
+git config --global user.email "tu_email@gmail.com"
+Verifica que se guardó bien:<!-- end list -->git config --list
+Escribe un mensaje en la caja de texto (ej. "Primer commit de mi mini proyecto") y presiona Commit. ¡Listo!8. Ecosistema Java: Hola MundoPara instalar y correr JAVA en VS Code, sigue estos pasos rápidos:Paso 1: Abre el Marketplace de VS Code e instala el Extension Pack for Java.<img width="831" height="369" alt="image" src="https://github.com/user-attachments/assets/c9f66193-762e-445b-a432-90a1df4740c2" />Paso 2: Presiona Ctrl+Shift+P, escribe Java: Getting Started (o búscalo en la pestaña Help -> Welcome) y selecciona la opción de instalar un JDK.<img width="896" height="452" alt="image" src="https://github.com/user-attachments/assets/9a36b904-5c62-476b-b475-68d7be44be62" />Paso 3: Descarga e instala el JDK siguiendo el asistente.<img width="921" height="429" alt="image" src="https://github.com/user-attachments/assets/93d97ac8-690e-46b8-93f1-27fcf710eab6" />☕ Tu primer Hola Mundo en JAVACrea una carpeta, por ejemplo: test_java.Crea un archivo llamado holamundo.java.Escribe el código. VS Code te ayudará a autocompletar la clase:<!-- end list -->public class holamundo {
     public static void main(String[] args) {
         System.out.println("Hola Mundo");
     }    
 }
-```
-**IMPORTANTE:** la clase se tiene que llamar como el archivo, holamundo.java ---> public class holamundo.
-
-LISTO, ya tienes tu primer codigo en Java
----
-
-
-
-
-   
-
-
+⚠️ REGLA DE ORO EN JAVA: El nombre de la clase pública (public class holamundo) tiene que ser exactamente igual al nombre de tu archivo (holamundo.java). Si no coinciden, ¡no funcionará!¡LISTO! Le das al botón de Run (play) que aparecerá sobre la función main y ya habrás corrido tu primer código en Java. 🎉
