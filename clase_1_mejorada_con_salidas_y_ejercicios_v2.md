@@ -46,7 +46,7 @@ Al terminar esta clase podrás:
 </details>
 
 <details open>
-<summary><strong>📌 Índice (linkeado)</strong></summary>
+<summary><strong>📌 Índice </strong></summary>
 
 
 1. [Motivación](#1-motivacion)
