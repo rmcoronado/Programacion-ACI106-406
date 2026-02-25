@@ -4,9 +4,6 @@
 ![GitHub](https://img.shields.io/badge/GitHub-Plataforma-black?logo=github)
 ![Nivel](https://img.shields.io/badge/Nivel-Primer%20Año-blue)
 ![Estado](https://img.shields.io/badge/Estado-Activo-success)
-
-> **Versión pedagógica mejorada**: contenido depurado + índice linkeado + diagramas + ejercicios.
-
 ---
 
 <a id="objetivos"></a>
