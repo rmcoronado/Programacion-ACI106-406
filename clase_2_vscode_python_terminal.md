@@ -642,6 +642,50 @@ exit()
    git config --list
 ```
 
-5. 
+4. Luego, eso nos da la posibilidad de hacer nuestro primer commit.
 
-Luego, eso nos da la posibilidad de hacer nuestro primer commit.
+   ----
+
+
+   ## Instalación de JAVA
+
+   Para instalar JAVA en VS Code, haremos los siguientes pasos:
+
+   **Paso 1:** Abrir VS Code y su marketplace para instalar las extensiones necesarias de Java
+
+   <img width="831" height="369" alt="image" src="https://github.com/user-attachments/assets/c9f66193-762e-445b-a432-90a1df4740c2" />
+
+  **Paso 2:** Vamos a la pestaña de help de VS code y seleccionamos welcome y luego la opción de instalar JDK.
+
+  <img width="896" height="452" alt="image" src="https://github.com/user-attachments/assets/9a36b904-5c62-476b-b475-68d7be44be62" />
+
+  **Paso 3:** instalar el JDK siguiendo los pasos que se muestran abajo.
+
+  <img width="921" height="429" alt="image" src="https://github.com/user-attachments/assets/93d97ac8-690e-46b8-93f1-27fcf710eab6" />
+
+  ### HOLA MUNDO JAVA
+
+  Pasos para crear nuestor hola mundo en Java:
+
+  1. Crear una carpeta, por ejemplo: test_java
+  2. Crear un archivo llamado holamundo.java
+  3. Autocompletando pueden llegar a diseñar su primera clase (elemento fundamental en programación orientada a objetos (POO), el cual veremos a futuro en profundidad) holamundo:
+
+```java
+public class holamundo {
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }    
+}
+```
+**IMPORTANTE:** la clase se tiene que llamar como el archivo, holamundo.java ---> public class holamundo.
+
+LISTO, ya tienes tu primer codigo en Java
+---
+
+
+
+
+   
+
+
