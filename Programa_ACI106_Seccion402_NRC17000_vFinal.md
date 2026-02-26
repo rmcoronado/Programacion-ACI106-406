@@ -133,7 +133,7 @@
 <details>
 <summary><b>6. Resumen rápido (tablas por tramo)</b></summary>
 
-**Tabla 1**
+**Parte I**
 
 | Semana (rango) | Miércoles (teoría) | Viernes (ayudantía/práctica) | Evaluación |
 | --- | --- | --- | --- |
@@ -144,7 +144,7 @@
 | 5 (30/03–05/04) | Patrones algorítmicos: búsqueda lineal, bandera, corte | Laboratorio: “mini tickets v1” (sin estructuras complejas) | — |
 | 6 (06/04–12/04) | Repaso guiado + resolución tipo prueba | Taller de preparación + dudas | Cátedra 1 (Mié 08/04) <br>Calendario-Academico-UDLA-2026_… |
 
-**Tabla 2**
+**Parte II**
 
 | Semana (rango) | Miércoles (teoría) | Viernes (ayudantía/práctica) | Evaluación |
 | --- | --- | --- | --- |
@@ -152,7 +152,7 @@
 | 8 (20/04–26/04) | Listas/diccionarios (Py) + colecciones equivalentes (Java: idea, no profundidad) | Laboratorio: métricas simples (conteos, top-N, filtros) | — |
 | 9 (27/04–03/05) | Depuración, lectura de errores, buenas prácticas | “Bug clinic”: arreglar 6 bugs típicos (con guía) | — |
 
-**Tabla 3**
+**Parte III**
 
 | Semana (rango) | Miércoles (teoría) | Viernes (ayudantía/práctica) | Evaluación |
 | --- | --- | --- | --- |
@@ -161,7 +161,7 @@
 | 12 (18/05–24/05) | Semana de consolidación UDLA: reforzamiento + recuperación + preparación cátedra | Taller de recuperación/repaso + mini simulacro | — <br>Calendario-Academico-UDLA-2026_… |
 | 13 (25/05–31/05) | Excepciones (try/catch) + colecciones aplicadas al diseño | Laboratorio: consolidación “tickets POO v1” | Cátedra 2 (Mié 27/05) <br>Calendario-Academico-UDLA-2026_… |
 
-**Tabla 4**
+**Parte IV**
 
 | Semana (rango) | Miércoles (teoría) | Viernes (ayudantía/práctica) | Entregables formativos |
 | --- | --- | --- | --- |
@@ -170,7 +170,7 @@
 | 16 (15/06–21/06) | Sprint integrador: arquitectura simple + robustez | Laboratorio: “tickets final” (Java) + manejo de errores | README + ejemplos de uso |
 | 17 (22/06–28/06) | Preparación examen: estrategia de resolución, lectura de enunciado, plan | Simulacro integrador corto + retro | Banco de ejercicios resueltos |
 
-**Tabla 5**
+**Parte V**
 
 | Semana (rango) | Evaluación |
 | --- | --- |
@@ -182,10 +182,10 @@
 <details open>
 <summary><b>7. Planificación detallada por semana (plegable por fecha)</b></summary>
 
-<details>
+<details open>
 <summary><b>Semana 1 (02/03–08/03) — Unidad 1</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -194,26 +194,18 @@
 **Lectura / antes de clase**
 - Python 3 (capítulos intro) + “docs” Python (concepto de programa).
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - diagnóstico + pensamiento algorítmico (descomposición, patrones, abstracción) + presentación del caso “tickets”.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - setup VS Code/terminal + primer programa en Python + traza guiada (entrada→proceso→salida).
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -224,13 +216,10 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 2 (09/03–15/03) — Unidad 1</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -239,43 +228,32 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (variables, I/O) + Java (sintaxis básica I/O).
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - variables, tipos, operadores, I/O (Python completo) + espejo Java (Scanner/println).
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - katas secuenciales + validación simple (rangos).
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
 - “traducción micro” 10 min: input/print ↔ Scanner/println.
 
 **Instrumento / criterio**
-- correctitud de I/O + nombres significativos.
+- correctitud de I/O + nombres significativos
 
 </details>
-
-
-</details>
-
-<details>
-<summary><b>Semana 3 (16/03–22/03) — Unidad 1</b></summary>
 
 <details open>
+<summary><b>Semana 3 (16/03–22/03) — Unidad 1</b></summary>
+
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -284,26 +262,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (if/elif) + lectura corta: tabla de decisiones.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - condicionales + lógica + diseño de casos. Espejo Java: if/else if/else.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - clínica de pruebas manuales (casos borde) sobre mini-tickets (prioridad/estado).
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -314,13 +284,10 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 4 (23/03–29/03) — Unidad 1 • Ejercicio 1 (Vie 27/03) — bucles + pruebas manuales (3,75%).</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -329,46 +296,33 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (bucles) + docs Python (range).
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - bucles + patrones (contador/acumulador).
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - laboratorio “menú por consola” + validación.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Ejercicio 1 (Vie 27/03) — bucles + pruebas manuales (3,75%).
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Instrumento / criterio**
 - lista de cotejo (correctitud, validación, casos borde).
 
-</details>
-<details>
 <summary><b>Notas</b></summary>
 
 - si se suspende tu módulo, este bloque se entrega como cápsula + guía de ejercicios.
 
-</details>
-
 
 </details>
-
-<details>
-<summary><b>Semana 5 (30/03–05/04) — Unidad 1→2</b></summary>
 
 <details open>
+<summary><b>Semana 5 (30/03–05/04) — Unidad 1→2</b></summary>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -377,26 +331,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (listas intro)
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - patrones algorítmicos típicos + modelado de datos mínimo.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - mini tickets v0 (alta/listado/búsqueda) en Python.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -404,13 +350,10 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 6 (06/04–12/04) — Hito evaluativo 1 • Cátedra 1 (Mié 08/04) — práctica: diseño + implementación Python (25%).</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -419,26 +362,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - repaso dirigido + banco de ejercicios.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - repaso guiado + estrategia de lectura de enunciado.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - taller de preparación + dudas.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Cátedra 1 (Mié 08/04) — práctica: diseño + implementación Python (25%).
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Instrumento / criterio**
@@ -446,13 +381,10 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 7 (13/04–19/04) — Unidad 2 • Ejercicio 2 (Vie 17/04) — refactor + checklist (3,75%).</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -461,26 +393,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (funciones, scope).
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - funciones, parámetros, retorno, ámbito.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - refactor tickets v0 → funciones.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Ejercicio 2 (Vie 17/04) — refactor + checklist (3,75%).
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Instrumento / criterio**
@@ -488,13 +412,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 8 (20/04–26/04) — Unidad 2</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -503,26 +423,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (listas/dicts) + lectura breve: colecciones en Java (conceptual).
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - estructuras de datos básicas + operaciones típicas.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - laboratorio métricas (top-N, filtros, conteos) sobre tickets.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -530,13 +442,10 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>>
 <summary><b>Semana 9 (27/04–03/05) — Unidad 2</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -545,26 +454,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Python 3 (errores comunes)
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - depuración, lectura de errores, buenas prácticas.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - “bug clinic” (6 bugs típicos) + mini code-review.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -572,13 +473,10 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 10 (04/05–10/05) — Unidad 3 (Java entra formal) • Ejercicio 3 (Vie 08/05) — traducción controlada (3,75%).</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -587,26 +485,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Joyanes (sintaxis básica) + docs Java.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - “bootcamp Java” (tipos, métodos, arreglos/listas) con mismo problema.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - kata: convertir 3 ejercicios Python→Java con plantilla.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Ejercicio 3 (Vie 08/05) — traducción controlada (3,75%).
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Instrumento / criterio**
@@ -614,13 +504,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 11 (11/05–17/05) — Unidad 3 • Ejercicio 4 (Vie 15/05) — mini-POO (3,75%).</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -629,26 +515,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Joyanes (clases/objetos)
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - clases/objetos + encapsulamiento.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - laboratorio: Ticket + Usuario + reglas de estado.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Ejercicio 4 (Vie 15/05) — mini-POO (3,75%).
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Instrumento / criterio**
@@ -656,13 +534,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 12 (18/05–24/05) — Semana de consolidación UDLA</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -671,26 +545,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - banco de problemas seleccionados.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - reforzamiento dirigido (según diagnóstico) + práctica guiada.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - recuperación + mini simulacro formativo (sin nota).
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Evidencia**
@@ -698,13 +564,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 13 (25/05–31/05) — Hito evaluativo 2 • Cátedra 2 (Mié 27/05) — Java POO + robustez (25%).</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -713,26 +575,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - Joyanes (excepciones) + docs Java try/catch.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - try/catch + colecciones aplicadas.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - consolidación “tickets POO v1”.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Cátedra 2 (Mié 27/05) — Java POO + robustez (25%).
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Instrumento / criterio**
@@ -741,12 +595,10 @@ _(Sin evaluación esta semana)_
 </details>
 
 
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 14 (01/06–07/06) — Unidad 3 (POO “real”)</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -755,26 +607,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - lectura guiada (herencia vs composición) + ejemplo del caso tickets.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - herencia vs composición (cuándo sí/cuándo no).
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - modelado guiado: jerarquía mínima (sin sobre-heredar).
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -785,13 +629,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 15 (08/06–14/06) — Unidad 3</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -800,26 +640,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - docs Java (interfaces) + ejemplo corto.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - polimorfismo aplicado (mínimo necesario).
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - code review en parejas + refactor por rúbrica.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -830,13 +662,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 16 (15/06–21/06) — Integración</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -845,26 +673,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - plantilla README + ejemplo de documentación de uso.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - arquitectura simple del proyecto (capas mínimas) + robustez.
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - laboratorio “tickets final” + manejo de errores + ejemplos.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Trabajo personal (e-support)**
@@ -875,13 +695,9 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 17 (22/06–28/06) — Preparación de examen</b></summary>
 
-<details open>
 <summary><b>Objetivo y lecturas</b></summary>
 
 **Objetivo**
@@ -890,26 +706,18 @@ _(Sin evaluación esta semana)_
 **Lectura / antes de clase**
 - banco de ejercicios resueltos + checklist de examen.
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 - estrategia de examen (lectura de requerimientos + plan).
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 - simulacro integrador corto + retro.
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 _(Sin evaluación esta semana)_
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 **Evidencia**
@@ -917,52 +725,36 @@ _(Sin evaluación esta semana)_
 
 </details>
 
-
-</details>
-
-<details>
+<details open>
 <summary><b>Semana 18 (29/06–05/07) — Examen final integrador • Examen final (Vie 03/07) — integrador, aplica lo aprendido durante el curso. (35%)</b></summary>
 
-<details open>
+
 <summary><b>Objetivo y lecturas</b></summary>
 
 _(Sin información)_
 
-</details>
-<details open>
 <summary><b>Miércoles (teoría)</b></summary>
 
 _(Sin información)_
 
-</details>
-<details open>
 <summary><b>Viernes (ayudantía / laboratorio)</b></summary>
 
 _(Sin información)_
 
-</details>
-<details open>
 <summary><b>Evaluación</b></summary>
 
 - Examen final (Vie 03/07) — integrador, aplica lo aprendido durante el curso. (35%)
 
-</details>
-<details open>
 <summary><b>Tarea / evidencia / instrumento</b></summary>
 
 _(Sin información)_
 
-</details>
-
 
 </details>
 
-
-</details>
-
+<details open>
 <a id="recomendaciones-operativas"></a>
 
-<details>
 <summary><b>8. Recomendaciones operativas (MiUdla + dinámica de clase)</b></summary>
 
 ### Dos mejoras finas
