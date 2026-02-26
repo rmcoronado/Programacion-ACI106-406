@@ -757,84 +757,10 @@ _(Sin información)_
 
 <summary><b>8. Recomendaciones operativas (MiUdla + dinámica de clase)</b></summary>
 
-### Dos mejoras finas
-- A) “Espejo Java” con reglas claras (para no comerse el tiempo)
-- Semanas 1–3: solo I/O + if + loops (10 min).
-- Semanas 4–6: funciones vs métodos (idea), sin POO aún.
-- Semanas 7–9: colecciones como concepto (sin detalle).
-- Semanas 10+: Java pasa a ser el principal.
-- B) Plantillas obligatorias (desde semana 10) + rúbrica mínima recurrente
-- Plantillas: Main.java, clases base, imports, lectura de input, estructura de carpetas.
-- Mini-rúbrica recurrente (sirve para ejercicios, laboratorios y parte del examen):
-- Correctitud (casos borde)
-- Claridad (nombres/estructura)
-- Modularidad (funciones/métodos)
-- Robustez (validación/excepciones)
-- Esto calza con el programa cuando señala uso de rúbricas/listas de cotejo e integración de procedimientos formativos y sumativos.
-
 ### Recomendación MiUdla (fijar evaluaciones)
 - Como el plazo de “Fijar Pruebas” es 14/03, mi recomendación operativa es que en MiUdla queden así desde el día 1:
+- 
 - E1 27/03, C1 08/04, E2 17/04, E3 08/05, E4 15/05, C2 27/05, Examen 03/07 (este último como evaluación planificada).
-
-### La receta para que funcione sin duplicar carga
-- Para que enseñar dos lenguajes no duplique trabajo:
-- Un solo problema por semana, dos implementaciones (una parcial en Java):
-- Miércoles: Python completo + Java mínimo (solo las líneas clave).
-- Viernes: los estudiantes completan la versión Java en plantilla.
-- Plantillas obligatorias para Java desde semana 10:
-- Main.java listo, imports listos, estructura base lista.
-- Así el tiempo se va al diseño, no al boilerplate.
-- Traducción semanal “micro” (10–15 min):
-- “Convierte este if/for/list de Python a Java”.
-- Esto hace que cuando llegue POO, Java ya sea familiar.
-- Ayudantía como “clínica” (no como segunda clase teórica):
-- 70% práctica guiada, 20% trabajo en pares, 10% retro.
-- Si quieres, en el siguiente paso te lo dejo aún más “universitario”:
-- por cada semana: objetivo medible, lecturas, actividad de aula, actividad de ayudantía, tarea, criterios de evaluación (mini rúbrica).
-- Principio del formulario
-- Otra version del programa con fechas
-- 1) Chequeo de viabilidad con tus restricciones UDLA
-- Lo que ya cumple
-- Al menos 1 evaluación en semana 06–11/04: tu Cátedra 1 (08/04) cumple perfecto.
-- Semana de consolidación 18–24/05: la usas bien como refuerzo/recuperación (sin evaluación sumativa).
-- Al menos 2 evaluaciones a semana 25–30/05: tu Cátedra 2 (27/05) + Ejercicios previos ya aseguran “≥2”.
-- Examen dentro de semana de exámenes 30/06–04/07: 03/07 está perfecto.
-- Distribución por unidades del programa: Unidad 1 (fundamentos), Unidad 2 (Python estructurado), Unidad 3 (POO en Java) está alineado con el programa.
-- Ajuste clave (operativo)
-- MiUdla “Fijar Pruebas” al 14/03: para llegar sin estrés, te conviene que todas las evaluaciones queden definidas desde semana 1, incluyendo “Examen final (fecha tentativa)” como pendiente planificada.
-- 25/03 suspensión de módulo 9 (reunión semestral): cae miércoles de semana 4. Para que no te rompa el hilo, te propongo un “plan B” listo: esa semana el miércoles queda como material asincrónico corto + quiz diagnóstico sin nota (o traslado del contenido al viernes).
-- 2) Evaluaciones: mismo calendario, pero más pedagógicas (y coherentes con resultados de aprendizaje)
-- Ponderaciones oficiales del syllabus: Examen 35%, Cátedras 50% (2×25%), Ejercicios 15% (4×3,75%).
-- Calendario evaluativo (mantengo tus fechas, solo mejoro el “cómo”)
-- Ejercicio 1 (3,75%) — Vie 27/03
-- Tipo: “trazas + casos de prueba” (condicionales/bucles).
-- Pedagogía: 30% trazas / 70% código corto.
-- Cátedra 1 (25%) — Mié 08/04 (1er hito)
-- Tipo: prueba práctica guiada (parte A en papel: diseño/algoritmo; parte B en PC: implementación).
-- Evalúa: RAA1 + inicio RAA2.
-- 202610ACI106_sillabus
-- Ejercicio 2 (3,75%) — Vie 17/04
-- Tipo: refactor a funciones + tests manuales.
-- Ejercicio 3 (3,75%) — Vie 08/05
-- Tipo: “traducción controlada” Python→Java (con plantilla).
-- Ejercicio 4 (3,75%) — Vie 15/05
-- Tipo: mini-POO (clase + constructor + getters/setters + regla simple).
-- Cátedra 2 (25%) — Mié 27/05 (2do hito)
-- Tipo: Java aplicado + modelado (clases + excepciones + colecciones).
-- Evalúa: cierre RAA2 e inicio fuerte RAA3.
-- 202610ACI106_sillabus
-- Examen final integrador (35%) — Vie 03/07
-- Tipo: caso completo (tickets/incidencias) con POO + robustez + lectura de requerimientos.
-- Evalúa: RAA1–RAA3 integrados.
-- 202610ACI106_sillabus
-- La mejora pedagógica más importante: “doble lenguaje” sin doble carga
-- En cada evaluación, el enunciado trae 2 capas:
-- Capa común: problema + casos + criterios (sirve para ambos lenguajes).
-- Capa de lenguaje:
-- hasta semana 9: Python completo + “micro-espejo Java”
-- desde semana 10: Java completo (Python queda como apoyo/lectura)
-- 3) Plan semana a semana (18 semanas) mejorado (bilingüe desde semana 1)
-- Mantengo tu estructura (miércoles teoría / viernes ayudantía), pero la vuelvo más “a prueba de calendario” y más explícita en el puente Python→Java.
 
 </details>
 
