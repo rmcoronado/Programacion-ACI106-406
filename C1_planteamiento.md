@@ -1,5 +1,5 @@
 DIAGRAMA DE FLUJO – CÁTEDRA 1 (C1) – Sistema de Tickets (Python)
-
+```
 ┌──────────────────────────────┐
 │            INICIO            │
 └───────────────┬──────────────┘
@@ -68,3 +68,5 @@ Opción 3: BUSCAR POR ID                        Opción 4: CERRAR TICKET POR ID
                     ┌─────────────────────────────────────────┐
                     │ Volver al BUCLE DEL MENÚ (repetir)       │
                     └─────────────────────────────────────────┘
+
+```
