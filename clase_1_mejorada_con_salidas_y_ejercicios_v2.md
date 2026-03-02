@@ -1,4 +1,4 @@
-# 🛡️ MÓDULO 1 — Git & GitHub: de Cero a Profesional (Clase 1)
+# 🛡️ MÓDULO 1 — Git & GitHub: nivel introductorio (Clase de soporte)
 
 ![Git](https://img.shields.io/badge/Git-Control%20de%20Versiones-orange?logo=git)
 ![GitHub](https://img.shields.io/badge/GitHub-Plataforma-black?logo=github)
